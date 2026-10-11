@@ -1,1306 +1,476 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta
-        name="description"
-        content="Vestra Accounting Ltd provides accounting, taxation and corporate advisory services for owner-managed businesses, entrepreneurs and growing companies."
-    >
-
-    <title>Vestra Accounting Ltd | Accountants &amp; Corporate Advisers</title>
-
-    <style>
-        :root {
-            --vestra-dark: #0b111e;
-            --vestra-slate: #1e293b;
-            --vestra-gold: #c5a880;
-            --vestra-text: #475569;
-            --vestra-bg: #f8fafc;
-            --vestra-border: #e2e8f0;
-            --vestra-white: #ffffff;
-        }
-
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            min-height: 100vh;
-            background-color: var(--vestra-bg);
-            color: var(--vestra-dark);
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Helvetica,
-                Arial,
-                sans-serif;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        button,
-        input,
-        select,
-        textarea {
-            font: inherit;
-        }
-
-        section {
-            scroll-margin-top: 110px;
-        }
-
-        :focus-visible {
-            outline: 3px solid rgba(197, 168, 128, 0.55);
-            outline-offset: 3px;
-        }
-
-        /* Top ribbon */
-
-        .ribbon {
-            padding: 10px 24px;
-            background-color: var(--vestra-dark);
-            border-bottom: 1px solid var(--vestra-slate);
-            color: var(--vestra-gold);
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        /* Header */
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: rgba(255, 255, 255, 0.94);
-            border-bottom: 1px solid var(--vestra-border);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-
-        .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            min-height: 78px;
-            margin: 0 auto;
-            padding: 16px 24px;
-            gap: 24px;
-        }
-
-        .logo-area {
-            display: flex;
-            flex-shrink: 0;
-            align-items: center;
-            gap: 12px;
-            color: var(--vestra-dark);
-            text-decoration: none;
-        }
-
-        .logo-mark {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            background-color: var(--vestra-dark);
-            border: 1px solid var(--vestra-gold);
-            transform: rotate(45deg);
-        }
-
-        .logo-mark span {
-            color: var(--vestra-white);
-            font-size: 11px;
-            font-weight: 700;
-            transform: rotate(-45deg);
-        }
-
-        .logo-title {
-            font-size: 20px;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            white-space: nowrap;
-        }
-
-        .logo-title em {
-            color: var(--vestra-gold);
-            font-family: Georgia, "Times New Roman", serif;
-            font-weight: 400;
-        }
-
-        .main-nav {
-            display: none;
-            align-items: center;
-            gap: 34px;
-        }
-
-        .main-nav a {
-            color: #64748b;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: color 0.2s ease;
-        }
-
-        .main-nav a:hover {
-            color: var(--vestra-dark);
-        }
-
-        .header-button {
-            display: none;
-            padding: 12px 20px;
-            border: 1px solid var(--vestra-dark);
-            color: var(--vestra-dark);
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition:
-                background-color 0.3s ease,
-                color 0.3s ease;
-        }
-
-        .header-button:hover {
-            background-color: var(--vestra-dark);
-            color: var(--vestra-white);
-        }
-
-        /* Hero */
-
-        .hero {
-            padding: 90px 24px;
-            background-color: var(--vestra-white);
-            border-bottom: 1px solid var(--vestra-border);
-        }
-
-        .hero-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 48px;
-        }
-
-        .eyebrow {
-            display: block;
-            margin-bottom: 14px;
-            color: var(--vestra-gold);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-        }
-
-        h1,
-        h2 {
-            font-family: Georgia, "Times New Roman", serif;
-        }
-
-        .hero h1 {
-            margin-bottom: 24px;
-            font-size: clamp(2.7rem, 6vw, 4rem);
-            font-weight: 600;
-            line-height: 1.12;
-        }
-
-        .hero h1 em {
-            color: var(--vestra-gold);
-            font-weight: 400;
-        }
-
-        .hero-copy {
-            max-width: 580px;
-            margin-bottom: 38px;
-            color: var(--vestra-text);
-            font-size: 17px;
-            font-weight: 300;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 15px 28px;
-            border: 1px solid var(--vestra-dark);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition:
-                background-color 0.3s ease,
-                border-color 0.3s ease,
-                color 0.3s ease;
-        }
-
-        .button-primary {
-            background-color: var(--vestra-dark);
-            color: var(--vestra-white);
-        }
-
-        .button-primary:hover {
-            background-color: var(--vestra-gold);
-            border-color: var(--vestra-gold);
-        }
-
-        .button-secondary:hover {
-            background-color: var(--vestra-bg);
-        }
-
-        /* Statistics */
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            padding: 28px;
-            background-color: var(--vestra-bg);
-            border: 1px solid var(--vestra-border);
-            gap: 14px;
-        }
-
-        .stat {
-            padding: 22px;
-            background-color: var(--vestra-white);
-            border: 1px solid #f1f5f9;
-        }
-
-        .stat strong {
-            display: block;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 28px;
-        }
-
-        .stat span {
-            color: #94a3b8;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        /* Shared sections */
-
-        .section {
-            padding: 96px 24px;
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-heading {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-bottom: 54px;
-            gap: 24px;
-        }
-
-        .section-heading h2,
-        .location-copy h2,
-        .contact-copy h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            line-height: 1.2;
-        }
-
-        .section-heading p {
-            max-width: 390px;
-            color: var(--vestra-text);
-            font-size: 14px;
-        }
-
-        /* Services */
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            overflow: hidden;
-            background-color: var(--vestra-white);
-            border: 1px solid var(--vestra-border);
-        }
-
-        .service-card {
-            padding: 40px;
-            border-bottom: 1px solid var(--vestra-border);
-            transition: background-color 0.2s ease;
-        }
-
-        .service-card:last-child {
-            border-bottom: 0;
-        }
-
-        .service-card:hover {
-            background-color: #fafafa;
-        }
-
-        .service-number {
-            margin-bottom: 28px;
-            color: var(--vestra-gold);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 20px;
-            font-style: italic;
-        }
-
-        .service-card h3 {
-            margin-bottom: 14px;
-            font-size: 18px;
-        }
-
-        .service-card p {
-            margin-bottom: 20px;
-            color: var(--vestra-text);
-            font-size: 14px;
-        }
-
-        .service-card ul {
-            color: #64748b;
-            font-size: 12px;
-            font-weight: 500;
-            list-style: none;
-        }
-
-        .service-card li {
-            position: relative;
-            margin-bottom: 8px;
-            padding-left: 16px;
-        }
-
-        .service-card li::before {
-            position: absolute;
-            left: 0;
-            color: var(--vestra-gold);
-            content: "•";
-        }
-
-        /* Location */
-
-        .location-section {
-            background-color: var(--vestra-white);
-            border-top: 1px solid var(--vestra-border);
-            border-bottom: 1px solid var(--vestra-border);
-        }
-
-        .location-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
-            gap: 48px;
-        }
-
-        .location-copy h2 {
-            margin-bottom: 16px;
-        }
-
-        .location-copy > p {
-            margin-bottom: 24px;
-            color: var(--vestra-text);
-            font-size: 15px;
-        }
-
-        .address-box {
-            padding: 30px;
-            background-color: var(--vestra-bg);
-            border: 1px solid var(--vestra-border);
-            font-style: normal;
-        }
-
-        .address-box h3 {
-            margin-bottom: 12px;
-            color: var(--vestra-gold);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .address-box p {
-            color: var(--vestra-dark);
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 1.7;
-        }
-
-        .directions-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding-bottom: 3px;
-            border-bottom: 1px solid var(--vestra-gold);
-            color: var(--vestra-dark);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .directions-link:hover {
-            color: var(--vestra-gold);
-        }
-
-        .map-wrapper {
-            overflow: hidden;
-            width: 100%;
-            background-color: var(--vestra-white);
-            border: 1px solid #cbd5e1;
-        }
-
-        .office-map {
-            display: block;
-            width: 100%;
-            height: 400px;
-            border: 0;
-        }
-
-        .map-link {
-            display: block;
-            padding: 14px;
-            background-color: var(--vestra-dark);
-            color: var(--vestra-white);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
-
-        .map-link:hover {
-            background-color: var(--vestra-gold);
-        }
-
-        /* Philosophy */
-
-        .philosophy {
-            padding: 96px 24px;
-            background-color: var(--vestra-dark);
-            color: var(--vestra-white);
-        }
-
-        .philosophy-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .philosophy h2 {
-            margin-bottom: 46px;
-            font-size: clamp(2.25rem, 5vw, 3rem);
-            font-weight: 400;
-            line-height: 1.2;
-        }
-
-        .philosophy h2 em {
-            color: var(--vestra-gold);
-        }
-
-        .principles {
-            display: grid;
-            grid-template-columns: 1fr;
-            padding-top: 42px;
-            border-top: 1px solid var(--vestra-slate);
-            gap: 40px;
-        }
-
-        .principles h3 {
-            margin-bottom: 10px;
-            color: var(--vestra-gold);
-            font-size: 11px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .principles p {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        /* Contact */
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            overflow: hidden;
-            background-color: var(--vestra-white);
-            border: 1px solid var(--vestra-border);
-        }
-
-        .contact-copy {
-            padding: 48px;
-            background-color: #f1f5f9;
-        }
-
-        .contact-copy h2 {
-            margin-bottom: 18px;
-        }
-
-        .contact-copy > p {
-            margin-bottom: 30px;
-            color: var(--vestra-text);
-            font-size: 15px;
-        }
-
-        .contact-item {
-            padding: 16px 0;
-            border-top: 1px solid #dbe3ec;
-        }
-
-        .contact-item strong {
-            display: block;
-            margin-bottom: 4px;
-            color: var(--vestra-gold);
-            font-size: 10px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        .contact-item a,
-        .contact-item span {
-            color: var(--vestra-dark);
-            font-size: 14px;
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-form {
-            padding: 48px;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .field {
-            display: flex;
-            flex-direction: column;
-            gap: 7px;
-        }
-
-        .field-full {
-            grid-column: 1 / -1;
-        }
-
-        label {
-            color: var(--vestra-dark);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 13px 14px;
-            background-color: var(--vestra-white);
-            border: 1px solid #cbd5e1;
-            border-radius: 0;
-            color: var(--vestra-dark);
-        }
-
-        input:focus,
-        select:focus,
-        textarea:focus {
-            border-color: var(--vestra-gold);
-            outline: none;
-        }
-
-        textarea {
-            min-height: 145px;
-            resize: vertical;
-        }
-
-        .form-note {
-            color: #64748b;
-            font-size: 12px;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 15px 28px;
-            background-color: var(--vestra-dark);
-            border: 1px solid var(--vestra-dark);
-            color: var(--vestra-white);
-            cursor: pointer;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .submit-button:hover {
-            background-color: var(--vestra-gold);
-            border-color: var(--vestra-gold);
-        }
-
-        /* Footer */
-
-        .site-footer {
-            padding: 52px 24px 24px;
-            background-color: #070b13;
-            color: var(--vestra-white);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            padding-bottom: 38px;
-            border-bottom: 1px solid var(--vestra-slate);
-            gap: 34px;
-        }
-
-        .footer-brand p {
-            max-width: 390px;
-            margin-top: 16px;
-            color: #94a3b8;
-            font-size: 13px;
-        }
-
-        .footer-heading {
-            margin-bottom: 12px;
-            color: var(--vestra-gold);
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-            font-size: 10px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        .footer-links {
-            display: grid;
-            gap: 8px;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            font-size: 13px;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: var(--vestra-white);
-        }
-
-        .footer-address {
-            color: #94a3b8;
-            font-size: 13px;
-            font-style: normal;
-            line-height: 1.7;
-        }
-
-        .footer-bottom {
-            display: flex;
-            flex-direction: column;
-            padding-top: 22px;
-            color: #64748b;
-            font-size: 11px;
-            gap: 8px;
-        }
-
-        /* Responsive layout */
-
-        @media (min-width: 640px) {
-            .hero-actions {
-                flex-direction: row;
-            }
-
-            .principles {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .form-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 768px) {
-            .main-nav {
-                display: flex;
-            }
-
-            .header-button {
-                display: inline-block;
-            }
-
-            .section-heading {
-                flex-direction: row;
-                align-items: flex-end;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .service-card {
-                border-right: 1px solid var(--vestra-border);
-                border-bottom: 0;
-            }
-
-            .service-card:last-child {
-                border-right: 0;
-            }
-
-            .location-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: 2fr 1fr 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-        }
-
-        @media (min-width: 900px) {
-            .contact-grid {
-                grid-template-columns: 5fr 7fr;
-            }
-
-            .contact-copy,
-            .contact-form {
-                padding: 60px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 7fr 5fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .ribbon {
-                padding-right: 14px;
-                padding-left: 14px;
-                letter-spacing: 0.1em;
-            }
-
-            .nav-container,
-            .hero,
-            .section,
-            .philosophy {
-                padding-right: 18px;
-                padding-left: 18px;
-            }
-
-            .logo-title {
-                font-size: 16px;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card,
-            .contact-copy,
-            .contact-form {
-                padding: 30px 24px;
-            }
-
-            .office-map {
-                height: 320px;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vestra Accounting Ltd provides accounting, tax planning and corporate advisory services for businesses in London and Essex.">
+  <title>Vestra Accounting Ltd | Accountants &amp; Corporate Advisers</title>
+  <style>
+    :root {
+      --dark: #0b111e;
+      --slate: #1e293b;
+      --gold: #c5a880;
+      --text: #475569;
+      --bg: #f8fafc;
+      --border: #e2e8f0;
+      --white: #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--dark);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    section { scroll-margin-top: 110px; }
+    :focus-visible { outline: 3px solid rgba(197,168,128,.55); outline-offset: 3px; }
+
+    .ribbon {
+      padding: 10px 24px;
+      background: var(--dark);
+      border-bottom: 1px solid var(--slate);
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      min-height: 78px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      gap: 24px;
+    }
+    .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+    .logo-mark {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--dark);
+      border: 1px solid var(--gold);
+      transform: rotate(45deg);
+    }
+    .logo-mark span { color: var(--white); font-size: 11px; font-weight: 700; transform: rotate(-45deg); }
+    .logo-title { font-size: 20px; font-weight: 500; letter-spacing: -.02em; white-space: nowrap; }
+    .logo-title em { color: var(--gold); font-family: Georgia, serif; font-weight: 400; }
+    nav { display: none; align-items: center; gap: 34px; }
+    nav a {
+      color: #64748b;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    nav a:hover { color: var(--dark); }
+    .header-button {
+      display: none;
+      padding: 12px 20px;
+      border: 1px solid var(--dark);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .header-button:hover { background: var(--dark); color: var(--white); }
+
+    .hero { padding: 90px 24px; background: var(--white); border-bottom: 1px solid var(--border); }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 48px;
+    }
+    .eyebrow {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1, h2 { font-family: Georgia, "Times New Roman", serif; }
+    h1 { margin-bottom: 24px; font-size: clamp(2.7rem,6vw,4rem); line-height: 1.12; }
+    h1 em { color: var(--gold); font-weight: 400; }
+    .hero-copy { max-width: 580px; margin-bottom: 38px; color: var(--text); font-size: 17px; font-weight: 300; }
+    .actions { display: flex; flex-direction: column; gap: 14px; }
+    .button {
+      display: inline-block;
+      padding: 15px 28px;
+      border: 1px solid var(--dark);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    .button-primary { background: var(--dark); color: var(--white); }
+    .button-primary:hover { background: var(--gold); border-color: var(--gold); }
+    .button-secondary:hover { background: var(--bg); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      padding: 28px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      gap: 14px;
+    }
+    .stat { padding: 22px; background: var(--white); border: 1px solid #f1f5f9; }
+    .stat strong { display: block; font-family: Georgia, serif; font-size: 28px; }
+    .stat span { color: #94a3b8; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+
+    .section { padding: 96px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-heading { display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 54px; gap: 24px; }
+    .section-heading h2, .location-copy h2, .contact-copy h2 { font-size: clamp(2rem,4vw,2.5rem); line-height: 1.2; }
+    .section-heading p { max-width: 390px; color: var(--text); font-size: 14px; }
+
+    .services { display: grid; grid-template-columns: 1fr; background: var(--white); border: 1px solid var(--border); }
+    .service { padding: 40px; border-bottom: 1px solid var(--border); }
+    .service:last-child { border-bottom: 0; }
+    .service-number { margin-bottom: 28px; color: var(--gold); font-family: Georgia, serif; font-size: 20px; font-style: italic; }
+    .service h3 { margin-bottom: 14px; font-size: 18px; }
+    .service p { margin-bottom: 20px; color: var(--text); font-size: 14px; }
+    .service ul { color: #64748b; font-size: 12px; font-weight: 500; list-style: none; }
+    .service li { position: relative; margin-bottom: 8px; padding-left: 16px; }
+    .service li::before { position: absolute; left: 0; color: var(--gold); content: "•"; }
+
+    .location { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .location-grid { display: grid; grid-template-columns: 1fr; align-items: center; gap: 48px; }
+    .location-copy h2 { margin-bottom: 16px; }
+    .location-copy > p { margin-bottom: 24px; color: var(--text); font-size: 15px; }
+    .address-box { padding: 30px; background: var(--bg); border: 1px solid var(--border); font-style: normal; }
+    .address-box h3 { margin-bottom: 12px; color: var(--gold); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .address-box p { font-size: 16px; font-weight: 500; line-height: 1.7; }
+    .directions { display: inline-block; margin-top: 20px; border-bottom: 1px solid var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-decoration: none; text-transform: uppercase; }
+    .map-wrapper { overflow: hidden; border: 1px solid #cbd5e1; background: var(--white); }
+    .office-map { display: block; width: 100%; height: 400px; border: 0; }
+    .map-link { display: block; padding: 14px; background: var(--dark); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-align: center; text-decoration: none; text-transform: uppercase; }
+    .map-link:hover { background: var(--gold); }
+
+    .philosophy { padding: 96px 24px; background: var(--dark); color: var(--white); }
+    .philosophy-inner { max-width: 800px; margin: 0 auto; }
+    .philosophy h2 { margin-bottom: 46px; font-size: clamp(2.25rem,5vw,3rem); font-weight: 400; line-height: 1.2; }
+    .philosophy h2 em { color: var(--gold); }
+    .principles { display: grid; grid-template-columns: 1fr; padding-top: 42px; border-top: 1px solid var(--slate); gap: 40px; }
+    .principles h3 { margin-bottom: 10px; color: var(--gold); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .principles p { color: #94a3b8; font-size: 14px; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr; overflow: hidden; background: var(--white); border: 1px solid var(--border); }
+    .contact-copy { padding: 48px; background: #f1f5f9; }
+    .contact-copy h2 { margin-bottom: 18px; }
+    .contact-copy > p { margin-bottom: 30px; color: var(--text); font-size: 15px; }
+    .contact-item { padding: 16px 0; border-top: 1px solid #dbe3ec; }
+    .contact-item strong { display: block; color: var(--gold); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .contact-item a, .contact-item span { font-size: 14px; text-decoration: none; }
+    .contact-form { padding: 48px; }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    .field { display: flex; flex-direction: column; gap: 7px; }
+    .field-full { grid-column: 1 / -1; }
+    label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+    input, select, textarea { width: 100%; padding: 13px 14px; border: 1px solid #cbd5e1; border-radius: 0; background: var(--white); color: var(--dark); }
+    input:focus, select:focus, textarea:focus { border-color: var(--gold); outline: none; }
+    textarea { min-height: 145px; resize: vertical; }
+    .form-note { color: #64748b; font-size: 12px; }
+    .submit { width: 100%; padding: 15px 28px; border: 1px solid var(--dark); background: var(--dark); color: var(--white); cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .submit:hover { background: var(--gold); border-color: var(--gold); }
+
+    footer { padding: 52px 24px 24px; background: #070b13; color: var(--white); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; padding-bottom: 38px; border-bottom: 1px solid var(--slate); gap: 34px; }
+    .footer-brand p, .footer-address, .footer-links a { color: #94a3b8; font-size: 13px; }
+    .footer-brand p { max-width: 390px; margin-top: 16px; }
+    .footer-heading { margin-bottom: 12px; color: var(--gold); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+    .footer-links { display: grid; gap: 8px; }
+    .footer-links a { text-decoration: none; }
+    .footer-address { font-style: normal; line-height: 1.7; }
+    .footer-bottom { display: flex; flex-direction: column; padding-top: 22px; color: #64748b; font-size: 11px; gap: 8px; }
+
+    @media (min-width: 640px) {
+      .actions { flex-direction: row; }
+      .principles { grid-template-columns: repeat(2,1fr); }
+      .form-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (min-width: 768px) {
+      nav, .header-button { display: flex; }
+      .section-heading { flex-direction: row; align-items: flex-end; }
+      .services { grid-template-columns: repeat(3,1fr); }
+      .service { border-right: 1px solid var(--border); border-bottom: 0; }
+      .service:last-child { border-right: 0; }
+      .location-grid { grid-template-columns: repeat(2,1fr); }
+      .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+      .footer-bottom { flex-direction: row; justify-content: space-between; }
+    }
+    @media (min-width: 900px) {
+      .contact-grid { grid-template-columns: 5fr 7fr; }
+      .contact-copy, .contact-form { padding: 60px; }
+    }
+    @media (min-width: 1024px) { .hero-inner { grid-template-columns: 7fr 5fr; } }
+    @media (max-width: 480px) {
+      .nav-container, .hero, .section, .philosophy { padding-left: 18px; padding-right: 18px; }
+      .logo-title { font-size: 16px; }
+      .stats { grid-template-columns: 1fr; }
+      .service, .contact-copy, .contact-form { padding: 30px 24px; }
+      .office-map { height: 320px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
 </head>
-
 <body>
-    <div class="ribbon">
-        Strategic accounting for ambitious businesses
+  <div class="ribbon">Strategic accounting for ambitious businesses</div>
+
+  <header>
+    <div class="nav-container">
+      <a class="logo-area" href="#home" aria-label="Vestra Accounting home">
+        <span class="logo-mark" aria-hidden="true"><span>V</span></span>
+        <span class="logo-title">Vestra <em>Accounting</em></span>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-button" href="#contact">Arrange a consultation</a>
     </div>
+  </header>
 
-    <header class="site-header">
-        <div class="nav-container">
-            #home
-                <span class="logo-mark" aria-hidden="true">
-                    <span>V</span>
-                </span>
-
-                <span class="logo-title">
-                    Vestra <em>Accounting</em>
-                </span>
-            </a>
-
-            <nav class="main-nav" aria-label="Main navigation">
-                #servicesServices</a>
-                #approachApproach</a>
-                #locationLocation</a>
-                #contactContact</a>
-            </nav>
-
-            #contact
-                Arrange a consultation
-            </a>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">Corporate advisory &amp; tax architecture</span>
+          <h1>Clarity for today.<br><em>Structure for tomorrow.</em></h1>
+          <p class="hero-copy">We provide commercially focused accounting, tax and advisory support for owner-managed businesses, entrepreneurs and growing companies.</p>
+          <div class="actions">
+            <a class="button button-primary" href="#contact">Start a conversation</a>
+            <a class="button button-secondary" href="#services">Explore our services</a>
+          </div>
         </div>
-    </header>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-container">
-                <div>
-                    <span class="eyebrow">
-                        Corporate advisory &amp; tax architecture
-                    </span>
-
-                    <h1>
-                        Clarity for today.<br>
-                        <em>Structure for tomorrow.</em>
-                    </h1>
-
-                    <p class="hero-copy">
-                        We provide commercially focused accounting, tax and
-                        advisory support for owner-managed businesses,
-                        entrepreneurs and growing companies.
-                    </p>
-
-                    <div class="hero-actions">
-                        #contact
-                            Start a conversation
-                        </a>
-
-                        #services
-                            Explore our services
-                        </a>
-                    </div>
-                </div>
-
-                <div class="stats" aria-label="Practice highlights">
-                    <div class="stat">
-                        <strong>01</strong>
-                        <span>Dedicated adviser</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong>360°</strong>
-                        <span>Business perspective</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong>12</strong>
-                        <span>Month planning cycle</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong>100%</strong>
-                        <span>Commercially focused</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="services">
-            <div class="section-container">
-                <div class="section-heading">
-                    <div>
-                        <span class="eyebrow">Our capabilities</span>
-
-                        <h2>
-                            Accounting built around your objectives
-                        </h2>
-                    </div>
-
-                    <p>
-                        Practical support across compliance, taxation and
-                        commercial decision-making, delivered through one
-                        coordinated advisory relationship.
-                    </p>
-                </div>
-
-                <div class="services-grid">
-                    <article class="service-card">
-                        <div class="service-number">01</div>
-
-                        <h3>Accounts &amp; Compliance</h3>
-
-                        <p>
-                            Accurate reporting and dependable statutory
-                            compliance, with clear explanations and no
-                            unnecessary complexity.
-                        </p>
-
-                        <ul>
-                            <li>Annual company accounts</li>
-                            <li>Corporation tax returns</li>
-                            <li>Management accounts</li>
-                            <li>Bookkeeping and VAT</li>
-                        </ul>
-                    </article>
-
-                    <article class="service-card">
-                        <div class="service-number">02</div>
-
-                        <h3>Tax Planning</h3>
-
-                        <p>
-                            Forward-looking tax advice designed to support
-                            sustainable growth and well-informed commercial
-                            decisions.
-                        </p>
-
-                        <ul>
-                            <li>Corporate tax planning</li>
-                            <li>Director remuneration</li>
-                            <li>Personal tax returns</li>
-                            <li>Business structure reviews</li>
-                        </ul>
-                    </article>
-
-                    <article class="service-card">
-                        <div class="service-number">03</div>
-
-                        <h3>Corporate Advisory</h3>
-
-                        <p>
-                            Financial insight for business owners navigating
-                            growth, investment, restructuring or succession.
-                        </p>
-
-                        <ul>
-                            <li>Cash-flow forecasting</li>
-                            <li>Business planning</li>
-                            <li>Performance analysis</li>
-                            <li>Strategic transaction support</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section
-            class="section location-section"
-            id="location"
-        >
-            <div class="section-container location-grid">
-                <div class="location-copy">
-                    <span class="eyebrow">Our office</span>
-
-                    <h2>
-                        Accessible advice, delivered personally
-                    </h2>
-
-                    <p>
-                        Meet with us to discuss your business, its current
-                        challenges and the opportunities ahead. Consultations
-                        are available by appointment.
-                    </p>
-
-                    <address class="address-box">
-                        <h3>Office address</h3>
-
-                        <p>
-                            Vestra Accounting Ltd<br>
-                            BEC50, Cambridge Road<br>
-                            Barking, Essex<br>
-                            IG11 8FG
-                        </p>
-
-                        https://www.google.com/maps/search/?api=1&amp;query=BEC50%2C+Cambridge+Road%2C+Barking%2C+Essex%2C+IG11+8FG
-                            View directions
-                        </a>
-                    </address>
-                </div>
-
-                <div class="map-wrapper">
-                    https://maps.google.com/maps?q=BEC50%2C%20Cambridge%20Road%2C%20Barking%2C%20Essex%2C%20IG11%208FG&amp;z=16&amp;output=embed</iframe>
-
-                    https://www.google.com/maps/search/?api=1&amp;query=BEC50%2C+Cambridge+Road%2C+Barking%2C+Essex%2C+IG11+8FG
-                        Open in Google Maps
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="philosophy" id="approach">
-            <div class="philosophy-container">
-                <h2>
-                    Good accounting records the past.
-                    <em>Great advice shapes what comes next.</em>
-                </h2>
-
-                <div class="principles">
-                    <div>
-                        <h3>Commercial clarity</h3>
-
-                        <p>
-                            We translate financial information into practical
-                            insight, helping you understand the implications
-                            behind the figures.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3>Structured foresight</h3>
-
-                        <p>
-                            We look beyond the immediate filing deadline and
-                            help you plan for tax, cash flow and long-term
-                            business objectives.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="contact">
-            <div class="section-container contact-grid">
-                <div class="contact-copy">
-                    <span class="eyebrow">
-                        Start a conversation
-                    </span>
-
-                    <h2>Tell us what you are building</h2>
-
-                    <p>
-                        Share a few details about your business and the support
-                        you require. We will contact you to arrange an initial
-                        discussion.
-                    </p>
-
-                    <div class="contact-item">
-                        <strong>Email</strong>
-
-                        hello@vestraaccounting.co.uk
-                            hello@vestraaccounting.co.uk
-                        </a>
-                    </div>
-
-                    <div class="contact-item">
-                        <strong>Telephone</strong>
-                        <span>Telephone number to be added</span>
-                    </div>
-
-                    <div class="contact-item">
-                        <strong>Office hours</strong>
-                        <span>Monday to Friday, 9:00am to 5:30pm</span>
-                    </div>
-                </div>
-
-                <!--
-                    GitHub Pages cannot process forms by itself.
-                    Replace action="#" with a form service endpoint
-                    before using this form to receive enquiries.
-                -->
-
-                #
-                    <div class="form-grid">
-                        <div class="field">
-                            <label for="name">Your name</label>
-
-                            <input
-                                id="name"
-                                name="name"
-                                type="text"
-                                autocomplete="name"
-                                required
-                            >
-                        </div>
-
-                        <div class="field">
-                            <label for="company">Company name</label>
-
-                            <input
-                                id="company"
-                                name="company"
-                                type="text"
-                                autocomplete="organization"
-                            >
-                        </div>
-
-                        <div class="field">
-                            <label for="email">Email address</label>
-
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                autocomplete="email"
-                                required
-                            >
-                        </div>
-
-                        <div class="field">
-                            <label for="telephone">Telephone</label>
-
-                            <input
-                                id="telephone"
-                                name="telephone"
-                                type="tel"
-                                autocomplete="tel"
-                            >
-                        </div>
-
-                        <div class="field field-full">
-                            <label for="service">Area of interest</label>
-
-                            <select id="service" name="service">
-                                <option value="">
-                                    Select a service
-                                </option>
-
-                                <option value="accounts">
-                                    Accounts and compliance
-                                </option>
-
-                                <option value="tax">
-                                    Tax planning
-                                </option>
-
-                                <option value="advisory">
-                                    Corporate advisory
-                                </option>
-
-                                <option value="other">
-                                    Other enquiry
-                                </option>
-                            </select>
-                        </div>
-
-                        <div class="field field-full">
-                            <label for="message">
-                                How can we help?
-                            </label>
-
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                            ></textarea>
-                        </div>
-
-                        <p class="form-note field-full">
-                            Please do not include passwords, bank details or
-                            other sensitive information in this form.
-                        </p>
-
-                        <div class="field-full">
-                            <button
-                                class="submit-button"
-                                type="submit"
-                            >
-                                Submit enquiry
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="logo-area">
-                        <span class="logo-mark" aria-hidden="true">
-                            <span>V</span>
-                        </span>
-
-                        <span class="logo-title">
-                            Vestra <em>Accounting</em>
-                        </span>
-                    </div>
-
-                    <p>
-                        Accounting, taxation and commercial advisory support
-                        for ambitious businesses.
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="footer-heading">Navigation</h2>
-
-                    <div class="footer-links">
-                        #servicesServices</a>
-                        #approachOur approach</a>
-                        #locationLocation</a>
-                        #contactContact</a>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 class="footer-heading">Office</h2>
-
-                    <address class="footer-address">
-                        Vestra Accounting Ltd<br>
-                        BEC50, Cambridge Road<br>
-                        Barking, Essex<br>
-                        IG11 8FG
-                    </address>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <span>
-                    &copy; 2026 Vestra Accounting Ltd.
-                    All rights reserved.
-                </span>
-
-                <span>
-                    Registered in England and Wales.
-                </span>
-            </div>
+        <div class="stats" aria-label="Practice highlights">
+          <div class="stat"><strong>01</strong><span>Dedicated adviser</span></div>
+          <div class="stat"><strong>360°</strong><span>Business perspective</span></div>
+          <div class="stat"><strong>12</strong><span>Month planning cycle</span></div>
+          <div class="stat"><strong>100%</strong><span>Commercially focused</span></div>
         </div>
-    </footer>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">Our capabilities</span>
+            <h2>Accounting built around your objectives</h2>
+          </div>
+          <p>Practical support across compliance, taxation and commercial decision-making, delivered through one coordinated advisory relationship.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <div class="service-number">01</div>
+            <h3>Accounts &amp; Compliance</h3>
+            <p>Accurate reporting and dependable statutory compliance, with clear explanations and no unnecessary complexity.</p>
+            <ul>
+              <li>Annual company accounts</li>
+              <li>Corporation tax returns</li>
+              <li>Management accounts</li>
+              <li>Bookkeeping and VAT</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <div class="service-number">02</div>
+            <h3>Tax Planning</h3>
+            <p>Forward-looking tax advice designed to support sustainable growth and well-informed commercial decisions.</p>
+            <ul>
+              <li>Corporate tax planning</li>
+              <li>Director remuneration</li>
+              <li>Personal tax returns</li>
+              <li>Business structure reviews</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <div class="service-number">03</div>
+            <h3>Corporate Advisory</h3>
+            <p>Financial insight for business owners navigating growth, investment, restructuring or succession.</p>
+            <ul>
+              <li>Cash-flow forecasting</li>
+              <li>Business planning</li>
+              <li>Performance analysis</li>
+              <li>Strategic transaction support</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section location" id="location">
+      <div class="section-inner location-grid">
+        <div class="location-copy">
+          <span class="eyebrow">Our office</span>
+          <h2>Accessible advice, delivered personally</h2>
+          <p>Meet with us to discuss your business, its current challenges and the opportunities ahead. Consultations are available by appointment.</p>
+
+          <address class="address-box">
+            <h3>Office address</h3>
+            <p>Vestra Accounting Ltd<br>BEC50, Cambridge Road<br>Barking, Essex<br>IG11 8FG</p>
+            <a class="directions" href="https://www.google.com/maps/search/?api=1&amp;query=BEC50%2C+Cambridge+Road%2C+Barking%2C+Essex%2C+IG11+8FG" target="_blank" rel="noopener noreferrer">View directions</a>
+          </address>
+        </div>
+
+        <div class="map-wrapper">
+          <iframe class="office-map" title="Google Map showing BEC50, Cambridge Road, Barking" src="https://maps.google.com/maps?q=BEC50%2C%20Cambridge%20Road%2C%20Barking%2C%20Essex%2C%20IG11%208FG&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=BEC50%2C+Cambridge+Road%2C+Barking%2C+Essex%2C+IG11+8FG" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy" id="approach">
+      <div class="philosophy-inner">
+        <h2>Good accounting records the past. <em>Great advice shapes what comes next.</em></h2>
+        <div class="principles">
+          <div>
+            <h3>Commercial clarity</h3>
+            <p>We translate financial information into practical insight, helping you understand the implications behind the figures.</p>
+          </div>
+          <div>
+            <h3>Structured foresight</h3>
+            <p>We look beyond the immediate filing deadline and help you plan for tax, cash flow and long-term business objectives.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-inner contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow">Start a conversation</span>
+          <h2>Tell us what you are building</h2>
+          <p>Share a few details about your business and the support you require. We will contact you to arrange an initial discussion.</p>
+
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:hello@vestraaccounting.co.uk">hello@vestraaccounting.co.uk</a>
+          </div>
+          <div class="contact-item">
+            <strong>Telephone</strong>
+            <span>Telephone number to be added</span>
+          </div>
+          <div class="contact-item">
+            <strong>Office hours</strong>
+            <span>Monday to Friday, 9:00am to 5:30pm</span>
+          </div>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="company">Company name</label>
+              <input id="company" name="company" type="text" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="telephone">Telephone</label>
+              <input id="telephone" name="telephone" type="tel" autocomplete="tel">
+            </div>
+            <div class="field field-full">
+              <label for="service">Area of interest</label>
+              <select id="service" name="service">
+                <option value="">Select a service</option>
+                <option value="accounts">Accounts and compliance</option>
+                <option value="tax">Tax planning</option>
+                <option value="advisory">Corporate advisory</option>
+                <option value="other">Other enquiry</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="message">How can we help?</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <p class="form-note field-full">Please do not include passwords, bank details or other sensitive information in this form.</p>
+            <div class="field-full"><button class="submit" type="submit">Submit enquiry</button></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-area">
+            <span class="logo-mark" aria-hidden="true"><span>V</span></span>
+            <span class="logo-title">Vestra <em>Accounting</em></span>
+          </div>
+          <p>Accounting, taxation and commercial advisory support for ambitious businesses.</p>
+        </div>
+
+        <div>
+          <h2 class="footer-heading">Navigation</h2>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#approach">Our approach</a>
+            <a href="#location">Location</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="footer-heading">Office</h2>
+          <address class="footer-address">Vestra Accounting Ltd<br>BEC50, Cambridge Road<br>Barking, Essex<br>IG11 8FG</address>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Vestra Accounting Ltd. All rights reserved.</span>
+        <span>Registered in England and Wales.</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
