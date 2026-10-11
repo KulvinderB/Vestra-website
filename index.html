@@ -2,20 +2,20 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <meta
         name="description"
-        content="Vestra Accountants Ltd provides corporate advisory, tax planning, accounting and business support services."
+        content="Vestra Accounting Ltd provides accounting, tax planning and corporate advisory services for businesses in London and Essex."
     >
 
-    <title>Vestra Accountants Ltd | Corporate Advisory &amp; Tax Architecture</title>
+    <title>Vestra Accounting Ltd | Accountants &amp; Corporate Advisers</title>
 
     <style>
-        /* =========================================================
-           Variables and reset
-        ========================================================= */
-
         :root {
             --vestra-dark: #0b111e;
             --vestra-slate: #1e293b;
@@ -81,9 +81,7 @@
             outline-offset: 3px;
         }
 
-        /* =========================================================
-           Top ribbon
-        ========================================================= */
+        /* Top ribbon */
 
         .ribbon {
             padding: 10px 24px;
@@ -97,9 +95,7 @@
             text-transform: uppercase;
         }
 
-        /* =========================================================
-           Header and navigation
-        ========================================================= */
+        /* Header and navigation */
 
         header {
             position: sticky;
@@ -127,6 +123,7 @@
             flex-shrink: 0;
             align-items: center;
             gap: 12px;
+            color: var(--vestra-dark);
             text-decoration: none;
         }
 
@@ -211,9 +208,7 @@
             }
         }
 
-        /* =========================================================
-           Hero section
-        ========================================================= */
+        /* Hero */
 
         .hero {
             padding: 80px 24px;
@@ -323,9 +318,7 @@
             }
         }
 
-        /* =========================================================
-           Statistics grid
-        ========================================================= */
+        /* Statistics */
 
         .stats-matrix {
             display: grid;
@@ -364,9 +357,7 @@
             }
         }
 
-        /* =========================================================
-           Shared section styles
-        ========================================================= */
+        /* Shared section styles */
 
         .section-wrap {
             max-width: 1200px;
@@ -412,9 +403,7 @@
             }
         }
 
-        /* =========================================================
-           Capabilities
-        ========================================================= */
+        /* Services */
 
         .section-capabilities {
             padding: 96px 24px;
@@ -431,9 +420,7 @@
         .blueprint-card {
             padding: 40px;
             border-bottom: 1px solid var(--vestra-border);
-            transition:
-                background-color 0.2s ease,
-                transform 0.2s ease;
+            transition: background-color 0.2s ease;
         }
 
         .blueprint-card:last-child {
@@ -500,9 +487,7 @@
             }
         }
 
-        /* =========================================================
-           Office location
-        ========================================================= */
+        /* Location */
 
         .section-location {
             padding: 96px 24px;
@@ -538,6 +523,7 @@
             padding: 32px;
             background-color: var(--vestra-bg);
             border: 1px solid var(--vestra-border);
+            font-style: normal;
         }
 
         .address-box h3 {
@@ -554,32 +540,57 @@
             font-size: 16px;
             font-style: normal;
             font-weight: 500;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        .map-placeholder {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            min-height: 300px;
-            padding: 40px;
-            background:
-                linear-gradient(rgba(11, 17, 30, 0.06), rgba(11, 17, 30, 0.06)),
-                repeating-linear-gradient(
-                    45deg,
-                    #e2e8f0,
-                    #e2e8f0 18px,
-                    #edf2f7 18px,
-                    #edf2f7 36px
-                );
-            border: 1px solid #cbd5e1;
-            color: #64748b;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-align: center;
+        .directions-link {
+            display: inline-block;
+            margin-top: 22px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid var(--vestra-gold);
+            color: var(--vestra-dark);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-decoration: none;
             text-transform: uppercase;
+            transition: color 0.2s ease;
+        }
+
+        .directions-link:hover {
+            color: var(--vestra-gold);
+        }
+
+        .map-wrapper {
+            overflow: hidden;
+            width: 100%;
+            background-color: var(--vestra-white);
+            border: 1px solid #cbd5e1;
+        }
+
+        .office-map {
+            display: block;
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        .map-link {
+            display: block;
+            padding: 14px 18px;
+            background-color: var(--vestra-dark);
+            color: var(--vestra-white);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .map-link:hover {
+            background-color: var(--vestra-gold);
         }
 
         @media (min-width: 768px) {
@@ -588,9 +599,7 @@
             }
         }
 
-        /* =========================================================
-           Corporate philosophy
-        ========================================================= */
+        /* Philosophy */
 
         .philosophy-banner {
             padding: 96px 24px;
@@ -645,9 +654,7 @@
             }
         }
 
-        /* =========================================================
-           Engagement/contact section
-        ========================================================= */
+        /* Contact section */
 
         .section-contact {
             padding: 96px 24px;
@@ -807,9 +814,7 @@
             }
         }
 
-        /* =========================================================
-           Footer
-        ========================================================= */
+        /* Footer */
 
         footer {
             padding: 56px 24px 24px;
@@ -861,6 +866,13 @@
             color: var(--vestra-white);
         }
 
+        .footer-address {
+            color: #94a3b8;
+            font-size: 13px;
+            font-style: normal;
+            line-height: 1.7;
+        }
+
         .footer-bottom {
             display: flex;
             flex-direction: column;
@@ -881,9 +893,7 @@
             }
         }
 
-        /* =========================================================
-           Smaller screens
-        ========================================================= */
+        /* Small screens */
 
         @media (max-width: 480px) {
             .ribbon {
@@ -898,7 +908,7 @@
             }
 
             .logo-title {
-                font-size: 17px;
+                font-size: 16px;
             }
 
             .hero,
@@ -915,9 +925,14 @@
             .contact-form {
                 padding: 32px 24px;
             }
+
+            .office-map {
+                height: 320px;
+            }
         }
 
-        /* Respect accessibility settings */
+        /* Accessibility */
+
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
@@ -926,9 +941,9 @@
             *,
             *::before,
             *::after {
-                transition-duration: 0.01ms !important;
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
             }
         }
     </style>
@@ -947,7 +962,7 @@
                 </span>
 
                 <span class="logo-title">
-                    Vestra <span>Accountants</span>
+                    Vestra <span>Accounting</span>
                 </span>
             </a>
 
@@ -1036,7 +1051,10 @@
                 <div class="grid-blueprint">
                     <article class="blueprint-card">
                         <div class="card-num">01</div>
-                        <h3 class="card-title">Accounts &amp; Compliance</h3>
+
+                        <h3 class="card-title">
+                            Accounts &amp; Compliance
+                        </h3>
 
                         <p class="card-text">
                             Accurate reporting and dependable statutory
@@ -1054,6 +1072,7 @@
 
                     <article class="blueprint-card">
                         <div class="card-num">02</div>
+
                         <h3 class="card-title">Tax Planning</h3>
 
                         <p class="card-text">
@@ -1072,6 +1091,7 @@
 
                     <article class="blueprint-card">
                         <div class="card-num">03</div>
+
                         <h3 class="card-title">Corporate Advisory</h3>
 
                         <p class="card-text">
@@ -1094,6 +1114,7 @@
             <div class="location-container">
                 <div class="location-info">
                     <span class="section-kicker">Our office</span>
+
                     <h2>Accessible advice, delivered personally</h2>
 
                     <p>
@@ -1103,21 +1124,29 @@
                     </p>
 
                     <address class="address-box">
-                        <h3>Registered office</h3>
+                        <h3>Office address</h3>
+
                         <p>
-                            Vestra Accountants Ltd<br>
-                            Insert office address<br>
-                            London, United Kingdom
+                            Vestra Accounting Ltd<br>
+                            BEC50<br>
+                            Cambridge Road<br>
+                            Barking<br>
+                            Essex<br>
+                            IG11 8FG
                         </p>
+
+                        https://www.google.com/maps/search/?api=1&amp;query=BEC50+Cambridge+Road+Barking+Essex+IG11+8FG
+                            View directions
+                        </a>
                     </address>
                 </div>
 
-                <div
-                    class="map-placeholder"
-                    role="img"
-                    aria-label="Map placeholder for Vestra Accountants office"
-                >
-                    Add office map or location image here
+                <div class="map-wrapper">
+                    https://maps.google.com/maps?q=BEC50%20Cambridge%20Road%20Barking%20Essex%20IG11%208FG&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed</iframe>
+
+                    https://www.google.com/maps/search/?api=1&amp;query=BEC50+Cambridge+Road+Barking+Essex+IG11+8FG
+                        Open in Google Maps
+                    </a>
                 </div>
             </div>
         </section>
@@ -1132,6 +1161,7 @@
                 <div class="split-row">
                     <div class="split-col">
                         <h3>Commercial clarity</h3>
+
                         <p>
                             We translate financial information into practical
                             insight, helping you understand the implications
@@ -1141,6 +1171,7 @@
 
                     <div class="split-col">
                         <h3>Structured foresight</h3>
+
                         <p>
                             We look beyond the immediate filing deadline and
                             help you plan for tax, cash flow and long-term
@@ -1154,7 +1185,9 @@
         <section class="section-contact" id="contact">
             <div class="contact-container">
                 <div class="contact-intro">
-                    <span class="section-kicker">Start a conversation</span>
+                    <span class="section-kicker">
+                        Start a conversation
+                    </span>
 
                     <h2>Tell us what you are building</h2>
 
@@ -1167,13 +1200,15 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <strong>Email</strong>
-                            hello@vestraaccountants.co.uk
-                                hello@vestraaccountants.co.uk
+
+                            hello@vestraaccounting.co.uk
+                                hello@vestraaccounting.co.uk
                             </a>
                         </div>
 
                         <div class="contact-item">
                             <strong>Telephone</strong>
+
                             tel:+440000000000
                                 +44 (0) 0000 000 000
                             </a>
@@ -1181,19 +1216,26 @@
 
                         <div class="contact-item">
                             <strong>Office hours</strong>
-                            <span>Monday to Friday, 9:00am to 5:30pm</span>
+
+                            <span>
+                                Monday to Friday, 9:00am to 5:30pm
+                            </span>
                         </div>
                     </div>
                 </div>
 
                 <!--
-                    This form requires a form-handling service or backend
-                    endpoint before messages can be delivered.
+                    This form is currently visual only.
+
+                    Replace action="#" with your form-processing URL
+                    when you are ready to receive enquiries.
                 -->
+
                 #
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="name">Your name</label>
+
                             <input
                                 id="name"
                                 name="name"
@@ -1205,6 +1247,7 @@
 
                         <div class="form-group">
                             <label for="company">Company name</label>
+
                             <input
                                 id="company"
                                 name="company"
@@ -1215,6 +1258,7 @@
 
                         <div class="form-group">
                             <label for="email">Email address</label>
+
                             <input
                                 id="email"
                                 name="email"
@@ -1226,6 +1270,7 @@
 
                         <div class="form-group">
                             <label for="telephone">Telephone</label>
+
                             <input
                                 id="telephone"
                                 name="telephone"
@@ -1238,16 +1283,22 @@
                             <label for="service">Area of interest</label>
 
                             <select id="service" name="service">
-                                <option value="">Select a service</option>
+                                <option value="">
+                                    Select a service
+                                </option>
+
                                 <option value="accounts">
                                     Accounts and compliance
                                 </option>
+
                                 <option value="tax">
                                     Tax planning
                                 </option>
+
                                 <option value="advisory">
                                     Corporate advisory
                                 </option>
+
                                 <option value="other">
                                     Other enquiry
                                 </option>
@@ -1266,8 +1317,8 @@
 
                         <div class="form-group full-width">
                             <p class="form-note">
-                                Please do not include passwords, bank details or
-                                other sensitive information in this form.
+                                Please do not include passwords, bank details
+                                or other sensitive information in this form.
                             </p>
                         </div>
 
@@ -1292,13 +1343,13 @@
                         </span>
 
                         <span class="logo-title">
-                            Vestra <span>Accountants</span>
+                            Vestra <span>Accounting</span>
                         </span>
                     </div>
 
                     <p>
-                        Corporate accounting, taxation and commercial advisory
-                        support for ambitious businesses.
+                        Accounting, taxation and commercial advisory support
+                        for ambitious businesses.
                     </p>
                 </div>
 
@@ -1314,23 +1365,26 @@
                 </div>
 
                 <div>
-                    <h2 class="footer-heading">Legal</h2>
+                    <h2 class="footer-heading">Office</h2>
 
-                    <div class="footer-links">
-                        #Privacy notice</a>
-                        #Cookie policy</a>
-                        #Terms of business</a>
-                    </div>
+                    <address class="footer-address">
+                        Vestra Accounting Ltd<br>
+                        BEC50, Cambridge Road<br>
+                        Barking, Essex<br>
+                        IG11 8FG
+                    </address>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <span>
-                    &copy; 2026 Vestra Accountants Ltd. All rights reserved.
+                    &copy; 2026 Vestra Accounting Ltd.
+                    All rights reserved.
                 </span>
 
                 <span>
-                    Registered in England and Wales. Company number: XXXXXXXX.
+                    Registered in England and Wales.
+                    Company number: XXXXXXXX.
                 </span>
             </div>
         </div>
