@@ -1,301 +1,206 @@
 <!DOCTYPE html>
-<html lang="en-GB" class="scroll-smooth">
+<html lang="en-GB">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vestra Accountants | Chartered Accountancy & Tax Advisory</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for premium corporate typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        vestra: {
-                            navy: '#0C1E36',     /* Premium Deep Navy */
-                            gold: '#C5A880',     /* Elegant Accent Gold */
-                            charcoal: '#1E293B', /* Dark Neutral */
-                            slate: '#64748B',    /* Secondary Copy text */
-                            bg: '#F8FAFC'        /* Clean Ice White Background */
-                        }
-                    }
-                }
-            }
+    <title>Vestra Accountants | Corporate Advisory & Tax Architecture</title>
+    <style>
+        /* CSS resets and premium corporate color variables */
+        :root {
+            --vestra-dark: #0B111E;
+            --vestra-slate: #1E293B;
+            --vestra-gold: #C5A880;
+            --vestra-text: #475569;
+            --vestra-bg: #F8FAFC;
         }
-    </script>
-</head>
-<body class="bg-vestra-bg font-sans text-vestra-navy antialiased">
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { 
+            background-color: var(--vestra-bg); 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            color: var(--vestra-dark); 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Layout structures */
+        .ribbon {
+            background-color: var(--vestra-dark);
+            border-bottom: 1px solid #1e293b;
+            color: var(--vestra-gold);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 10px 24px;
+            text-align: center;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-area { display: flex; align-items: center; gap: 10px; }
+        .logo-mark {
+            width: 28px;
+            height: 28px;
+            background-color: var(--vestra-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(45deg);
+            border: 1px solid var(--vestra-gold);
+        }
+        .logo-text-v { color: white; transform: rotate(-45deg); font-weight: bold; font-size: 11px; }
+        .logo-title { font-size: 20px; font-weight: 500; tracking: -0.02em; }
+        .logo-title span { color: var(--vestra-gold); font-style: italic; font-family: Georgia, serif; }
+        nav { display: none; gap: 40px; }
+        @media (min-width: 768px) { nav { display: flex; } }
+        nav a {
+            text-transform: uppercase;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: #64748b;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--vestra-dark); }
+        .btn-header {
+            border: 1px solid var(--vestra-dark);
+            color: var(--vestra-dark);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 12px 24px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-header:hover { background-color: var(--vestra-dark); color: white; }
+        
+        /* Hero section components */
+        .hero { background-color: white; padding: 80px 24px; border-bottom: 1px solid #e2e8f0; }
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        @media (min-width: 1024px) { 
+            .hero { padding: 120px 24px; }
+            .hero-container { grid-template-columns: 7fr 5fr; } 
+        }
+        .hero-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--vestra-gold); margin-bottom: 16px; display: block; }
+        .hero h1 { font-family: Georgia, serif; font-size: 42px; line-height: 1.15; font-weight: 600; margin-bottom: 32px; }
+        @media (min-width: 640px) { .hero h1 { font-size: 54px; } }
+        .hero h1 span { color: var(--vestra-gold); font-style: italic; font-weight: 400; }
+        .hero p { color: var(--vestra-text); font-size: 17px; font-weight: 300; max-width: 550px; margin-bottom: 40px; }
+        .hero-actions { display: flex; flex-direction: column; gap: 16px; }
+        @media (min-width: 640px) { .hero-actions { flex-direction: row; } }
+        .btn-primary {
+            background-color: var(--vestra-dark);
+            color: white;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 16px 32px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover { background-color: var(--vestra-gold); }
+        .btn-secondary {
+            border: 1px solid #e2e8f0;
+            color: var(--vestra-dark);
+            text-align: center;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 16px 32px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn-secondary:hover { background-color: #f8fafc; }
+        
+        /* Stats Grid */
+        .stats-matrix {
+            background-color: var(--vestra-bg);
+            padding: 32px;
+            border: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .stat-card { background-color: white; padding: 24px; border: 1px solid #f1f5f9; }
+        .stat-num { font-family: Georgia, serif; font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+        .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; }
+        
+        /* Capabilities Grid */
+        .section-capabilities { padding: 96px 24px; }
+        .section-wrap { max-width: 1200px; margin: 0 auto; }
+        .section-header { display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 60px; gap: 24px; }
+        @media (min-width: 768px) { .section-header { flex-direction: row; align-items: flex-end; } }
+        .section-title h2 { font-family: Georgia, serif; font-size: 32px; font-weight: 600; }
+        .section-desc { color: var(--vestra-text); font-size: 14px; font-weight: 300; max-width: 350px; }
+        .grid-blueprint { display: grid; grid-template-columns: 1fr; border: 1px solid #e2e8f0; background-color: white; }
+        @media (min-width: 768px) { .grid-blueprint { grid-template-columns: 1fr 1fr 1fr; } }
+        .blueprint-card { padding: 40px; border-bottom: 1px solid #e2e8f0; transition: background-color 0.2s; }
+        @media (min-width: 768px) { .blueprint-card { border-bottom: none; border-right: 1px solid #e2e8f0; } .blueprint-card:last-child { border-right: none; } }
+        .blueprint-card:hover { background-color: #fafafa; }
+        .card-num { color: var(--vestra-gold); font-family: Georgia, serif; font-style: italic; font-size: 20px; margin-bottom: 32px; }
+        .card-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+        .card-text { color: var(--vestra-text); font-size: 14px; font-weight: 300; margin-bottom: 24px; }
+        .card-list { list-style: none; font-size: 12px; color: #64748b; font-weight: 500; }
+        .card-list li { margin-bottom: 8px; }
 
-    <!-- Top Utility Ribbon -->
-    <div class="bg-vestra-navy border-b border-slate-800 text-[11px] font-medium tracking-widest text-white uppercase py-2.5 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-            <div>Strategic Corporate Tax Architecture & SME Accountancy Services</div>
-            <div class="flex items-center space-x-6 text-slate-300">
-                <span>Freephone: <strong class="text-vestra-gold">0800 000 0000</strong></span>
-                <a href="#consultation" class="hover:text-white transition">Make an Enquiry</a>
-            </div>
-        </div>
-    </div>
+        /* Corporate Philosophy Banner */
+        .philosophy-banner { background-color: var(--vestra-dark); color: white; padding: 96px 24px; }
+        .philosophy-container { max-width: 800px; margin: 0 auto; }
+        .philosophy-banner h2 { font-family: Georgia, serif; font-size: 36px; line-height: 1.2; font-weight: 400; margin-bottom: 48px; }
+        .philosophy-banner h2 span { color: var(--vestra-gold); font-style: italic; }
+        .split-row { display: grid; grid-template-columns: 1fr; gap: 48px; border-top: 1px solid #1e293b; padding-top: 48px; }
+        @media (min-width: 640px) { .split-row { grid-template-columns: 1fr 1fr; } }
+        .split-col h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--vestra-gold); margin-bottom: 12px; }
+        .split-col p { color: #94a3b8; font-size: 14px; font-weight: 300; }
 
-    <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-50 bg-white border-b border-slate-100 shadow-sm">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 bg-vestra-navy flex items-center justify-center rounded-sm rotate-45 border border-vestra-gold">
-                    <span class="text-xs text-white -rotate-45 font-serif font-bold tracking-tight">V</span>
-                </div>
-                <div class="text-2xl font-bold tracking-tight text-vestra-navy font-sans">
-                    VESTRA <span class="font-serif italic text-vestra-gold font-normal tracking-normal">Accountants</span>
-                </div>
-            </div>
-            <nav class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-wider text-vestra-slate">
-                <a href="#home" class="hover:text-vestra-navy transition">Home</a>
-                <a href="#services" class="hover:text-vestra-navy transition">Services</a>
-                <a href="#sectors" class="hover:text-vestra-navy transition">Sectors</a>
-                <a href="#branches" class="hover:text-vestra-navy transition">Our Branches</a>
-                <a href="#consultation" class="hover:text-vestra-navy transition">Contact</a>
-            </nav>
-            <div>
-                <a href="#consultation" class="bg-vestra-navy text-white text-xs font-bold uppercase tracking-widest px-6 py-3 rounded-none hover:bg-vestra-gold transition duration-300">
-                    Complimentary Consultation
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Editorial Hero Banner -->
-    <section id="home" class="bg-white py-20 lg:py-32 border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="max-w-3xl">
-                <span class="inline-block text-xs font-bold uppercase tracking-widest text-vestra-gold mb-4">Exceptional Chartered Accountancy Services</span>
-                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif text-vestra-navy leading-[1.15] mb-8">
-                    Straight-forward, jargon-free accounting services <span class="italic text-vestra-gold font-normal">you can trust</span>.
-                </h1>
-                <p class="text-base sm:text-lg text-vestra-slate max-w-xl mb-12 leading-relaxed font-light">
-                    We guide you through every step of your commercial journey from initial setup and smart bookkeeping structures through to strategic tax architectures and eventual corporate exit planning.
-                </p>
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                    <a href="#consultation" class="bg-vestra-navy text-white text-center text-xs font-bold uppercase tracking-wider px-8 py-4.5 rounded-none hover:bg-vestra-gold transition duration-300 shadow-lg shadow-slate-900/10">
-                        Arrange Initial Strategy Review
-                    </a>
-                    <a href="#services" class="bg-transparent border border-slate-200 text-vestra-navy text-center text-xs font-bold uppercase tracking-wider px-8 py-4.5 rounded-none hover:bg-slate-50 transition duration-300">
-                        View Core Frameworks
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Grid (Replicating Perrys Accounting Blocks) -->
-    <section id="services" class="py-24 bg-vestra-bg">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-2xl mx-auto mb-20">
-                <h2 class="text-3xl font-serif text-vestra-navy tracking-tight mb-4">Our Accountancy & Tax Services</h2>
-                <p class="text-vestra-slate font-light text-sm">Providing robust, effective tax planning and financial engineering services for clients of all sizes.</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Box 1 -->
-                <div class="bg-white p-8 border border-slate-100 shadow-sm flex flex-col justify-between group hover:border-vestra-gold transition">
-                    <div>
-                        <div class="w-10 h-10 bg-slate-50 border border-slate-100 flex items-center justify-center font-bold text-sm mb-6 text-vestra-gold">01</div>
-                        <h3 class="text-lg font-bold text-vestra-charcoal mb-3">Statutory Accounts</h3>
-                        <p class="text-vestra-slate text-sm font-light leading-relaxed">
-                            Complete year-end financial reporting and management accounting tailored to keep your company compliant with Companies House requirements.
-                        </p>
-                    </div>
-                </div>
-                <!-- Box 2 -->
-                <div class="bg-white p-8 border border-slate-100 shadow-sm flex flex-col justify-between group hover:border-vestra-gold transition">
-                    <div>
-                        <div class="w-10 h-10 bg-slate-50 border border-slate-100 flex items-center justify-center font-bold text-sm mb-6 text-vestra-gold">02</div>
-                        <h3 class="text-lg font-bold text-vestra-charcoal mb-3">Corporate Tax Planning</h3>
-                        <p class="text-vestra-slate text-sm font-light leading-relaxed">
-                            Proactive advisory blueprints designed to legally optimize your tax liability, extract profits safely, and protect core assets.
-                        </p>
-                    </div>
-                </div>
-                <!-- Box 3 -->
-                <div class="bg-white p-8 border border-slate-100 shadow-sm flex flex-col justify-between group hover:border-vestra-gold transition">
-                    <div>
-                        <div class="w-10 h-10 bg-slate-50 border border-slate-100 flex items-center justify-center font-bold text-sm mb-6 text-vestra-gold">03</div>
-                        <h3 class="text-lg font-bold text-vestra-charcoal mb-3">VAT & Corporation Tax</h3>
-                        <p class="text-vestra-slate text-sm font-light leading-relaxed">
-                            Timely and precise compilation of VAT returns, bookkeeping audit tracks, and corporate documentation protocols to avoid strict regulatory fines.
-                        </p>
-                    </div>
-                </div>
-                <!-- Box 4 -->
-                <div class="bg-white p-8 border border-slate-100 shadow-sm flex flex-col justify-between group hover:border-vestra-gold transition">
-                    <div>
-                        <div class="w-10 h-10 bg-slate-50 border border-slate-100 flex items-center justify-center font-bold text-sm mb-6 text-vestra-gold">04</div>
-                        <h3 class="text-lg font-bold text-vestra-charcoal mb-3">Making Tax Digital (MTD)</h3>
-                        <p class="text-vestra-slate text-sm font-light leading-relaxed">
-                            Full preparation framework assistance for self-employed and corporate entities mapping over to mandatory digital cloud tax filing pipelines.
-                        </p>
-                    </div>
-                </div>
-                <!-- Box 5 -->
-                <div class="bg-white p-8 border border-slate-100 shadow-sm flex flex-col justify-between group hover:border-vestra-gold transition">
-                    <div>
-                        <div class="w-10 h-10 bg-slate-50 border border-slate-100 flex items-center justify-center font-bold text-sm mb-6 text-vestra-gold">05</div>
-                        <h3 class="text-lg font-bold text-vestra-charcoal mb-3">Cloud Bookkeeping Systems</h3>
-                        <p class="text-vestra-slate text-sm font-light leading-relaxed">
-                            Advanced deployment and automated balancing structures using gold-standard certified Xero, QuickBooks, and FreeAgent platforms.
-                        </p>
-                    </div>
-                </div>
-                <!-- Box 6 -->
-                <div class="bg-white p-8 border border-slate-100 shadow-sm flex flex-col justify-between group hover:border-vestra-gold transition">
-                    <div>
-                        <div class="w-10 h-10 bg-slate-50 border border-slate-100 flex items-center justify-center font-bold text-sm mb-6 text-vestra-gold">06</div>
-                        <h3 class="text-lg font-bold text-vestra-charcoal mb-3">Business Exit Strategies</h3>
-                        <p class="text-vestra-slate text-sm font-light leading-relaxed">
-                            Long-term tactical financial configuration structures optimized to minimize Capital Gains Tax when you ready your enterprise for sale or succession.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sectors Specialized Block -->
-    <section id="sectors" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="max-w-xl mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-vestra-gold block mb-3">Industry Frameworks</span>
-                <h2 class="text-3xl font-serif text-vestra-navy tracking-tight">Dedicated Sector Expertise</h2>
-            </div>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="p-6 bg-vestra-bg border border-slate-100 font-semibold text-sm hover:bg-white hover:border-vestra-gold transition text-center">Small Business Accounts</div>
-                <div class="p-6 bg-vestra-bg border border-slate-100 font-semibold text-sm hover:bg-white hover:border-vestra-gold transition text-center">Property & Landlords</div>
-                <div class="p-6 bg-vestra-bg border border-slate-100 font-semibold text-sm hover:bg-white hover:border-vestra-gold transition text-center">E-commerce Operators</div>
-                <div class="p-6 bg-vestra-bg border border-slate-100 font-semibold text-sm hover:bg-white hover:border-vestra-gold transition text-center">Research & Development (R&D)</div>
-                <div class="p-6 bg-vestra-bg border border-slate-100 font-semibold text-sm hover:bg-white hover:border-vestra-gold transition text-center">CIS Construction Subcontractors</div>
-                <div class="p-6 bg-vestra-bg border border-slate-100 font-semibold text-sm hover:bg-white hover:border-vestra-gold transition text-center">Hotels, Pubs & Leisure</div>
-                <div class="p-6 bg-vestra-bg border border-slate-100 font-semibold text-sm hover:bg-white hover:border-vestra-gold transition text-center">Legal Professionals & Firms</div>
-                <div class="p-6 bg-vestra-bg border border-slate-100 font-semibold text-sm hover:bg-white hover:border-vestra-gold transition text-center">Startups & Capital Raises</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Regional Branches Office Directory Matrix -->
-    <section id="branches" class="py-24 bg-vestra-bg border-t border-b border-slate-200/60">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12">
-            <div class="text-center max-w-xl mx-auto mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-vestra-gold block mb-3">Our Regional Network</span>
-                <h2 class="text-3xl font-serif text-vestra-navy tracking-tight">Office Branches</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- London Office -->
-                <div class="bg-white p-8 border border-slate-100 shadow-sm">
-                    <h3 class="font-serif text-xl font-bold mb-4 border-b border-slate-100 pb-3">London Office</h3>
-                    <p class="text-vestra-slate text-xs font-light leading-relaxed mb-6">
-                        4th Floor, 399-401 Strand,<br>
-                        London, WC2R 0LT<br>
-                        <strong>T: 020 7408 4442</strong>
-                    </p>
-                </div>
-                <!-- Kent Office -->
-                <div class="bg-white p-8 border border-slate-100 shadow-sm">
-                    <h3 class="font-serif text-xl font-bold mb-4 border-b border-slate-100 pb-3">Tunbridge Wells Office</h3>
-                    <p class="text-vestra-slate text-xs font-light leading-relaxed mb-6">
-                        10 Upper Grosvenor Road,<br>
-                        Tunbridge Wells, Kent, TN1 2EP<br>
-                        <strong>T: 01892 543900</strong>
-                    </p>
-                </div>
-                <!-- Orpington Office -->
-                <div class="bg-white p-8 border border-slate-100 shadow-sm">
-                    <h3 class="font-serif text-xl font-bold mb-4 border-b border-slate-100 pb-3">Orpington Office</h3>
-                    <p class="text-vestra-slate text-xs font-light leading-relaxed mb-6">
-                        2nd Floor, Downe House,<br>
-                        303 High Street, Orpington, BR6 0NN<br>
-                        <strong>T: 01689 000000</strong>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Consultation Routing Input Endpoint Form -->
-    <section id="consultation" class="py-24 bg-white">
-        <div class="max-w-3xl mx-auto px-6">
-            <div class="text-center max-w-xl mx-auto mb-16">
-                <span class="text-xs font-bold uppercase tracking-widest text-vestra-gold block mb-3">Secure Intake Routing</span>
-                <h2 class="text-3xl font-serif text-vestra-navy tracking-tight mb-4">Book a Complimentary Consultation</h2>
-                <p class="text-vestra-slate text-sm font-light leading-relaxed">Outline your commercial scenario parameters below. A qualified adviser from your closest regional branch office will reach out within 24 operational hours.</p>
-            </div>
-            
-            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-                <!-- Replace with your actual Web3Forms Access Key to route data cleanly straight into your Microsoft Shared Mailbox -->
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY_HERE">
-                <input type="hidden" name="subject" value="New Client Practice Query - Vestra Corporate Web">
-                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Director / Contact Name</label>
-                        <input type="text" name="name" required class="w-full bg-white px-4 py-3 border border-slate-200 text-sm rounded-none focus:outline-none focus:border-vestra-navy transition">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Company Legal Title</label>
-                        <input type="text" name="company" required class="w-full bg-white px-4 py-3 border border-slate-200 text-sm rounded-none focus:outline-none focus:border-vestra-navy transition">
-                    </div>
-                </div>
-                
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Secure Business Email</label>
-                        <input type="email" name="email" required class="w-full bg-white px-4 py-3 border border-slate-200 text-sm rounded-none focus:outline-none focus:border-vestra-navy transition">
-                    </div>
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Target Office Location</label>
-                        <select name="branch" class="w-full bg-white px-4 py-3 border border-slate-200 text-sm rounded-none focus:outline-none focus:border-vestra-navy text-slate-500 transition">
-                            <option>London Strand Office</option>
-                            <option>Tunbridge Wells Office</option>
-                            <option>Orpington Office</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div>
-                    <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">Brief Summary of Accountancy or Corporate Tax Advisory Mandate Requirements</label>
-                    <textarea name="message" rows="5" required placeholder="Describe current reporting or tax planning needs..." class="w-full bg-white px-4 py-3 border border-slate-200 text-sm rounded-none focus:outline-none focus:border-vestra-navy transition"></textarea>
-                </div>
-                
-                <div>
-                    <button type="submit" class="w-full bg-vestra-navy text-white font-bold text-xs uppercase tracking-widest py-4.5 rounded-none hover:bg-vestra-gold transition duration-300 shadow-md">
-                        Transmit Consultation Briefing
-                    </button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- Professional Footer Architecture -->
-    <footer class="bg-vestra-navy text-slate-500 py-12 border-t border-slate-800 text-xs font-light">
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-6">
-            <div class="text-slate-400">
-                &copy; 2026 Vestra Accountants. All rights reserved. Vestra Accountants is a trading style of Vestra Accountants Limited. Registered in England & Wales.
-            </div>
-            <div class="flex space-x-6 text-[11px] uppercase tracking-wider">
-                <a href="#" class="hover:text-white transition">Privacy Architecture</a>
-                <a href="#" class="hover:text-white transition">Terms & Engagement Conditions</a>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+        /* Clean Engagement Form layout */
+        .section-form { padding: 96px 24px; background-color: white; }
+        .form-wrap { max-width: 700px; margin: 0 auto; }
+        .form-intro { text-align: center; margin-bottom: 48px; }
+        .form-intro h2 { font-family: Georgia, serif; font-size: 32px; margin-bottom: 16px; }
+        .form-intro p { color: var(--vestra-text); font-size: 14px; font-weight: 300; }
+        .corporate-form { display: flex; flex-direction: column; gap: 24px; }
+        .form-row { display: grid; grid-template-columns: 1fr; gap: 24px; }
+        @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
+        .field-group { display: flex; flex-direction: column; gap: 8px; }
+        .field-group label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; }
+        .field-group input, .field-group select, .field-group textarea {
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            font-size: 14px;
+            background-color: white;
+            border-radius: 0;
+            outline: none;
+            width: 100%;
+        }
+        .field-group input:focus, .field-group select:focus, .field-group textarea:focus { border-color: var(--vestra-dark); }
+        .btn-submit {
+            background-color: var(--vestra-dark);
+            color: white;
+            border: none;
+            font-size: 11px;
