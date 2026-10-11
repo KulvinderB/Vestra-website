@@ -51,11 +51,8 @@
             text-rendering: optimizeLegibility;
         }
 
-        img,
-        svg,
-        iframe {
-            display: block;
-            max-width: 100%;
+        a {
+            color: inherit;
         }
 
         button,
@@ -63,10 +60,6 @@
         select,
         textarea {
             font: inherit;
-        }
-
-        a {
-            color: inherit;
         }
 
         section {
@@ -135,7 +128,7 @@
             transform: rotate(45deg);
         }
 
-        .logo-text-v {
+        .logo-mark span {
             color: var(--vestra-white);
             font-size: 11px;
             font-weight: 700;
@@ -149,16 +142,16 @@
             white-space: nowrap;
         }
 
-        .logo-title span {
+        .logo-title em {
             color: var(--vestra-gold);
             font-family: Georgia, "Times New Roman", serif;
-            font-style: italic;
+            font-weight: 400;
         }
 
         .main-nav {
             display: none;
             align-items: center;
-            gap: 36px;
+            gap: 34px;
         }
 
         .main-nav a {
@@ -175,7 +168,7 @@
             color: var(--vestra-dark);
         }
 
-        .btn-header {
+        .header-button {
             display: none;
             padding: 12px 20px;
             border: 1px solid var(--vestra-dark);
@@ -190,25 +183,15 @@
                 color 0.3s ease;
         }
 
-        .btn-header:hover {
+        .header-button:hover {
             background-color: var(--vestra-dark);
             color: var(--vestra-white);
-        }
-
-        @media (min-width: 768px) {
-            .main-nav {
-                display: flex;
-            }
-
-            .btn-header {
-                display: inline-block;
-            }
         }
 
         /* Hero */
 
         .hero {
-            padding: 80px 24px;
+            padding: 90px 24px;
             background-color: var(--vestra-white);
             border-bottom: 1px solid var(--vestra-border);
         }
@@ -222,10 +205,9 @@
             gap: 48px;
         }
 
-        .hero-tag,
-        .section-kicker {
+        .eyebrow {
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             color: var(--vestra-gold);
             font-size: 11px;
             font-weight: 700;
@@ -233,25 +215,26 @@
             text-transform: uppercase;
         }
 
-        .hero h1 {
-            max-width: 760px;
-            margin-bottom: 24px;
-            color: var(--vestra-dark);
+        h1,
+        h2 {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(2.65rem, 6vw, 4rem);
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+            font-size: clamp(2.7rem, 6vw, 4rem);
             font-weight: 600;
             line-height: 1.12;
         }
 
-        .hero h1 span {
+        .hero h1 em {
             color: var(--vestra-gold);
-            font-style: italic;
             font-weight: 400;
         }
 
         .hero-copy {
             max-width: 580px;
-            margin-bottom: 40px;
+            margin-bottom: 38px;
             color: var(--vestra-text);
             font-size: 17px;
             font-weight: 300;
@@ -260,15 +243,15 @@
         .hero-actions {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
 
-        .btn-primary,
-        .btn-secondary {
+        .button {
             display: inline-block;
-            padding: 16px 32px;
+            padding: 15px 28px;
+            border: 1px solid var(--vestra-dark);
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.1em;
             text-align: center;
             text-decoration: none;
@@ -279,125 +262,86 @@
                 color 0.3s ease;
         }
 
-        .btn-primary {
+        .button-primary {
             background-color: var(--vestra-dark);
-            border: 1px solid var(--vestra-dark);
             color: var(--vestra-white);
         }
 
-        .btn-primary:hover {
+        .button-primary:hover {
             background-color: var(--vestra-gold);
             border-color: var(--vestra-gold);
         }
 
-        .btn-secondary {
-            border: 1px solid var(--vestra-border);
-            color: var(--vestra-dark);
-        }
-
-        .btn-secondary:hover {
+        .button-secondary:hover {
             background-color: var(--vestra-bg);
-            border-color: #cbd5e1;
         }
 
-        .stats-matrix {
+        /* Statistics */
+
+        .stats {
             display: grid;
-            grid-template-columns: 1fr;
-            padding: 24px;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 28px;
             background-color: var(--vestra-bg);
             border: 1px solid var(--vestra-border);
-            gap: 16px;
+            gap: 14px;
         }
 
-        .stat-card {
-            padding: 24px;
+        .stat {
+            padding: 22px;
             background-color: var(--vestra-white);
             border: 1px solid #f1f5f9;
         }
 
-        .stat-num {
-            margin-bottom: 4px;
+        .stat strong {
+            display: block;
             font-family: Georgia, "Times New Roman", serif;
             font-size: 28px;
-            font-weight: 700;
         }
 
-        .stat-label {
+        .stat span {
             color: #94a3b8;
-            font-size: 11px;
-            font-weight: 600;
+            font-size: 10px;
+            font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
 
-        @media (min-width: 420px) {
-            .stats-matrix {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 32px;
-            }
-        }
-
-        @media (min-width: 640px) {
-            .hero-actions {
-                flex-direction: row;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .hero {
-                padding: 100px 24px;
-            }
-
-            .hero-container {
-                grid-template-columns: 7fr 5fr;
-            }
-        }
-
         /* Shared sections */
 
-        .section-wrap {
+        .section {
+            padding: 96px 24px;
+        }
+
+        .section-container {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .section-header {
+        .section-heading {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            margin-bottom: 60px;
+            margin-bottom: 54px;
             gap: 24px;
         }
 
-        .section-title h2,
-        .location-info h2,
-        .contact-intro h2 {
-            font-family: Georgia, "Times New Roman", serif;
+        .section-heading h2,
+        .location-copy h2,
+        .contact-copy h2 {
             font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 600;
             line-height: 1.2;
         }
 
-        .section-desc {
+        .section-heading p {
             max-width: 390px;
             color: var(--vestra-text);
             font-size: 14px;
-            font-weight: 300;
-        }
-
-        @media (min-width: 768px) {
-            .section-header {
-                flex-direction: row;
-                align-items: flex-end;
-            }
         }
 
         /* Services */
 
-        .section-capabilities {
-            padding: 96px 24px;
-        }
-
-        .grid-blueprint {
+        .services-grid {
             display: grid;
             grid-template-columns: 1fr;
             overflow: hidden;
@@ -405,107 +349,86 @@
             border: 1px solid var(--vestra-border);
         }
 
-        .blueprint-card {
+        .service-card {
             padding: 40px;
             border-bottom: 1px solid var(--vestra-border);
             transition: background-color 0.2s ease;
         }
 
-        .blueprint-card:last-child {
+        .service-card:last-child {
             border-bottom: 0;
         }
 
-        .blueprint-card:hover {
+        .service-card:hover {
             background-color: #fafafa;
         }
 
-        .card-num {
-            margin-bottom: 32px;
+        .service-number {
+            margin-bottom: 28px;
             color: var(--vestra-gold);
             font-family: Georgia, "Times New Roman", serif;
             font-size: 20px;
             font-style: italic;
         }
 
-        .card-title {
-            margin-bottom: 16px;
+        .service-card h3 {
+            margin-bottom: 14px;
             font-size: 18px;
-            font-weight: 600;
         }
 
-        .card-text {
-            margin-bottom: 24px;
+        .service-card p {
+            margin-bottom: 20px;
             color: var(--vestra-text);
             font-size: 14px;
-            font-weight: 300;
         }
 
-        .card-list {
+        .service-card ul {
             color: #64748b;
             font-size: 12px;
             font-weight: 500;
             list-style: none;
         }
 
-        .card-list li {
+        .service-card li {
             position: relative;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             padding-left: 16px;
         }
 
-        .card-list li::before {
+        .service-card li::before {
             position: absolute;
             left: 0;
             color: var(--vestra-gold);
             content: "•";
         }
 
-        @media (min-width: 768px) {
-            .grid-blueprint {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .blueprint-card {
-                border-right: 1px solid var(--vestra-border);
-                border-bottom: 0;
-            }
-
-            .blueprint-card:last-child {
-                border-right: 0;
-            }
-        }
-
         /* Location */
 
-        .section-location {
-            padding: 96px 24px;
+        .location-section {
             background-color: var(--vestra-white);
             border-top: 1px solid var(--vestra-border);
             border-bottom: 1px solid var(--vestra-border);
         }
 
-        .location-container {
+        .location-grid {
             display: grid;
             grid-template-columns: 1fr;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
             gap: 48px;
         }
 
-        .location-info h2 {
+        .location-copy h2 {
             margin-bottom: 16px;
         }
 
-        .location-copy {
+        .location-copy > p {
             margin-bottom: 24px;
             color: var(--vestra-text);
             font-size: 15px;
-            font-weight: 300;
         }
 
         .address-box {
-            padding: 32px;
+            padding: 30px;
             background-color: var(--vestra-bg);
             border: 1px solid var(--vestra-border);
             font-style: normal;
@@ -530,7 +453,7 @@
 
         .directions-link {
             display: inline-block;
-            margin-top: 22px;
+            margin-top: 20px;
             padding-bottom: 3px;
             border-bottom: 1px solid var(--vestra-gold);
             color: var(--vestra-dark);
@@ -539,7 +462,6 @@
             letter-spacing: 0.1em;
             text-decoration: none;
             text-transform: uppercase;
-            transition: color 0.2s ease;
         }
 
         .directions-link:hover {
@@ -562,11 +484,11 @@
 
         .map-link {
             display: block;
-            padding: 14px 18px;
+            padding: 14px;
             background-color: var(--vestra-dark);
             color: var(--vestra-white);
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.1em;
             text-align: center;
             text-decoration: none;
@@ -578,15 +500,9 @@
             background-color: var(--vestra-gold);
         }
 
-        @media (min-width: 768px) {
-            .location-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
         /* Philosophy */
 
-        .philosophy-banner {
+        .philosophy {
             padding: 96px 24px;
             background-color: var(--vestra-dark);
             color: var(--vestra-white);
@@ -597,94 +513,71 @@
             margin: 0 auto;
         }
 
-        .philosophy-banner h2 {
-            margin-bottom: 48px;
-            font-family: Georgia, "Times New Roman", serif;
+        .philosophy h2 {
+            margin-bottom: 46px;
             font-size: clamp(2.25rem, 5vw, 3rem);
             font-weight: 400;
             line-height: 1.2;
         }
 
-        .philosophy-banner h2 span {
+        .philosophy h2 em {
             color: var(--vestra-gold);
-            font-style: italic;
         }
 
-        .split-row {
+        .principles {
             display: grid;
             grid-template-columns: 1fr;
-            padding-top: 48px;
+            padding-top: 42px;
             border-top: 1px solid var(--vestra-slate);
-            gap: 48px;
+            gap: 40px;
         }
 
-        .split-col h3 {
-            margin-bottom: 12px;
+        .principles h3 {
+            margin-bottom: 10px;
             color: var(--vestra-gold);
             font-size: 11px;
-            font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
 
-        .split-col p {
+        .principles p {
             color: #94a3b8;
             font-size: 14px;
-            font-weight: 300;
-        }
-
-        @media (min-width: 640px) {
-            .split-row {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         /* Contact */
 
-        .section-contact {
-            padding: 96px 24px;
-            background-color: var(--vestra-bg);
-        }
-
-        .contact-container {
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr;
-            max-width: 1200px;
-            margin: 0 auto;
             overflow: hidden;
             background-color: var(--vestra-white);
             border: 1px solid var(--vestra-border);
         }
 
-        .contact-intro {
+        .contact-copy {
             padding: 48px;
             background-color: #f1f5f9;
         }
 
-        .contact-intro h2 {
-            margin-bottom: 20px;
+        .contact-copy h2 {
+            margin-bottom: 18px;
         }
 
-        .contact-intro > p {
-            margin-bottom: 32px;
+        .contact-copy > p {
+            margin-bottom: 30px;
             color: var(--vestra-text);
             font-size: 15px;
-            font-weight: 300;
-        }
-
-        .contact-details {
-            display: grid;
-            gap: 20px;
         }
 
         .contact-item {
-            padding-top: 20px;
+            padding: 16px 0;
             border-top: 1px solid #dbe3ec;
         }
 
         .contact-item strong {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             color: var(--vestra-gold);
             font-size: 10px;
             letter-spacing: 0.12em;
@@ -709,20 +602,20 @@
         .form-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 22px;
+            gap: 20px;
         }
 
-        .form-group {
+        .field {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 7px;
         }
 
-        .form-group.full-width {
+        .field-full {
             grid-column: 1 / -1;
         }
 
-        .form-group label {
+        label {
             color: var(--vestra-dark);
             font-size: 11px;
             font-weight: 700;
@@ -730,27 +623,26 @@
             text-transform: uppercase;
         }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
+        input,
+        select,
+        textarea {
             width: 100%;
-            padding: 14px 15px;
+            padding: 13px 14px;
             background-color: var(--vestra-white);
             border: 1px solid #cbd5e1;
             border-radius: 0;
             color: var(--vestra-dark);
-            transition: border-color 0.2s ease;
         }
 
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        input:focus,
+        select:focus,
+        textarea:focus {
             border-color: var(--vestra-gold);
             outline: none;
         }
 
-        .form-group textarea {
-            min-height: 150px;
+        textarea {
+            min-height: 145px;
             resize: vertical;
         }
 
@@ -761,7 +653,7 @@
 
         .submit-button {
             width: 100%;
-            padding: 16px 30px;
+            padding: 15px 28px;
             background-color: var(--vestra-dark);
             border: 1px solid var(--vestra-dark);
             color: var(--vestra-white);
@@ -770,9 +662,6 @@
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            transition:
-                background-color 0.3s ease,
-                border-color 0.3s ease;
         }
 
         .submit-button:hover {
@@ -780,27 +669,10 @@
             border-color: var(--vestra-gold);
         }
 
-        @media (min-width: 700px) {
-            .form-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 900px) {
-            .contact-container {
-                grid-template-columns: 5fr 7fr;
-            }
-
-            .contact-intro,
-            .contact-form {
-                padding: 64px;
-            }
-        }
-
         /* Footer */
 
         .site-footer {
-            padding: 56px 24px 24px;
+            padding: 52px 24px 24px;
             background-color: #070b13;
             color: var(--vestra-white);
         }
@@ -810,33 +682,37 @@
             margin: 0 auto;
         }
 
-        .footer-top {
+        .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
-            padding-bottom: 40px;
+            padding-bottom: 38px;
             border-bottom: 1px solid var(--vestra-slate);
-            gap: 36px;
+            gap: 34px;
         }
 
         .footer-brand p {
             max-width: 390px;
-            margin-top: 18px;
+            margin-top: 16px;
             color: #94a3b8;
             font-size: 13px;
         }
 
         .footer-heading {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             color: var(--vestra-gold);
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
             font-size: 10px;
-            font-weight: 700;
             letter-spacing: 0.12em;
             text-transform: uppercase;
         }
 
         .footer-links {
             display: grid;
-            gap: 9px;
+            gap: 8px;
         }
 
         .footer-links a {
@@ -859,14 +735,60 @@
         .footer-bottom {
             display: flex;
             flex-direction: column;
-            padding-top: 24px;
+            padding-top: 22px;
             color: #64748b;
             font-size: 11px;
-            gap: 10px;
+            gap: 8px;
         }
 
-        @media (min-width: 700px) {
-            .footer-top {
+        /* Responsive layout */
+
+        @media (min-width: 640px) {
+            .hero-actions {
+                flex-direction: row;
+            }
+
+            .principles {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .main-nav {
+                display: flex;
+            }
+
+            .header-button {
+                display: inline-block;
+            }
+
+            .section-heading {
+                flex-direction: row;
+                align-items: flex-end;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .service-card {
+                border-right: 1px solid var(--vestra-border);
+                border-bottom: 0;
+            }
+
+            .service-card:last-child {
+                border-right: 0;
+            }
+
+            .location-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
                 grid-template-columns: 2fr 1fr 1fr;
             }
 
@@ -876,7 +798,22 @@
             }
         }
 
-        /* Small screens */
+        @media (min-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 5fr 7fr;
+            }
+
+            .contact-copy,
+            .contact-form {
+                padding: 60px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 7fr 5fr;
+            }
+        }
 
         @media (max-width: 480px) {
             .ribbon {
@@ -885,7 +822,10 @@
                 letter-spacing: 0.1em;
             }
 
-            .nav-container {
+            .nav-container,
+            .hero,
+            .section,
+            .philosophy {
                 padding-right: 18px;
                 padding-left: 18px;
             }
@@ -894,27 +834,20 @@
                 font-size: 16px;
             }
 
-            .hero,
-            .section-capabilities,
-            .section-location,
-            .philosophy-banner,
-            .section-contact {
-                padding-right: 18px;
-                padding-left: 18px;
+            .stats {
+                grid-template-columns: 1fr;
             }
 
-            .blueprint-card,
-            .contact-intro,
+            .service-card,
+            .contact-copy,
             .contact-form {
-                padding: 32px 24px;
+                padding: 30px 24px;
             }
 
             .office-map {
                 height: 320px;
             }
         }
-
-        /* Reduced motion */
 
         @media (prefers-reduced-motion: reduce) {
             html {
@@ -941,11 +874,11 @@
         <div class="nav-container">
             #home
                 <span class="logo-mark" aria-hidden="true">
-                    <span class="logo-text-v">V</span>
+                    <span>V</span>
                 </span>
 
                 <span class="logo-title">
-                    Vestra <span>Accounting</span>
+                    Vestra <em>Accounting</em>
                 </span>
             </a>
 
@@ -966,13 +899,13 @@
         <section class="hero" id="home">
             <div class="hero-container">
                 <div>
-                    <span class="hero-tag">
+                    <span class="eyebrow">
                         Corporate advisory &amp; tax architecture
                     </span>
 
                     <h1>
                         Clarity for today.<br>
-                        <span>Structure for tomorrow.</span>
+                        <em>Structure for tomorrow.</em>
                     </h1>
 
                     <p class="hero-copy">
@@ -992,61 +925,61 @@
                     </div>
                 </div>
 
-                <div class="stats-matrix" aria-label="Practice highlights">
-                    <div class="stat-card">
-                        <div class="stat-num">01</div>
-                        <div class="stat-label">Dedicated adviser</div>
+                <div class="stats" aria-label="Practice highlights">
+                    <div class="stat">
+                        <strong>01</strong>
+                        <span>Dedicated adviser</span>
                     </div>
 
-                    <div class="stat-card">
-                        <div class="stat-num">360°</div>
-                        <div class="stat-label">Business perspective</div>
+                    <div class="stat">
+                        <strong>360°</strong>
+                        <span>Business perspective</span>
                     </div>
 
-                    <div class="stat-card">
-                        <div class="stat-num">12</div>
-                        <div class="stat-label">Month planning cycle</div>
+                    <div class="stat">
+                        <strong>12</strong>
+                        <span>Month planning cycle</span>
                     </div>
 
-                    <div class="stat-card">
-                        <div class="stat-num">100%</div>
-                        <div class="stat-label">Commercially focused</div>
+                    <div class="stat">
+                        <strong>100%</strong>
+                        <span>Commercially focused</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-capabilities" id="services">
-            <div class="section-wrap">
-                <div class="section-header">
-                    <div class="section-title">
-                        <span class="section-kicker">Our capabilities</span>
+        <section class="section" id="services">
+            <div class="section-container">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">Our capabilities</span>
 
-                        <h2>Accounting built around your objectives</h2>
+                        <h2>
+                            Accounting built around your objectives
+                        </h2>
                     </div>
 
-                    <p class="section-desc">
+                    <p>
                         Practical support across compliance, taxation and
                         commercial decision-making, delivered through one
                         coordinated advisory relationship.
                     </p>
                 </div>
 
-                <div class="grid-blueprint">
-                    <article class="blueprint-card">
-                        <div class="card-num">01</div>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-number">01</div>
 
-                        <h3 class="card-title">
-                            Accounts &amp; Compliance
-                        </h3>
+                        <h3>Accounts &amp; Compliance</h3>
 
-                        <p class="card-text">
+                        <p>
                             Accurate reporting and dependable statutory
                             compliance, with clear explanations and no
                             unnecessary complexity.
                         </p>
 
-                        <ul class="card-list">
+                        <ul>
                             <li>Annual company accounts</li>
                             <li>Corporation tax returns</li>
                             <li>Management accounts</li>
@@ -1054,18 +987,18 @@
                         </ul>
                     </article>
 
-                    <article class="blueprint-card">
-                        <div class="card-num">02</div>
+                    <article class="service-card">
+                        <div class="service-number">02</div>
 
-                        <h3 class="card-title">Tax Planning</h3>
+                        <h3>Tax Planning</h3>
 
-                        <p class="card-text">
+                        <p>
                             Forward-looking tax advice designed to support
                             sustainable growth and well-informed commercial
                             decisions.
                         </p>
 
-                        <ul class="card-list">
+                        <ul>
                             <li>Corporate tax planning</li>
                             <li>Director remuneration</li>
                             <li>Personal tax returns</li>
@@ -1073,17 +1006,17 @@
                         </ul>
                     </article>
 
-                    <article class="blueprint-card">
-                        <div class="card-num">03</div>
+                    <article class="service-card">
+                        <div class="service-number">03</div>
 
-                        <h3 class="card-title">Corporate Advisory</h3>
+                        <h3>Corporate Advisory</h3>
 
-                        <p class="card-text">
+                        <p>
                             Financial insight for business owners navigating
                             growth, investment, restructuring or succession.
                         </p>
 
-                        <ul class="card-list">
+                        <ul>
                             <li>Cash-flow forecasting</li>
                             <li>Business planning</li>
                             <li>Performance analysis</li>
@@ -1094,14 +1027,19 @@
             </div>
         </section>
 
-        <section class="section-location" id="location">
-            <div class="location-container">
-                <div class="location-info">
-                    <span class="section-kicker">Our office</span>
+        <section
+            class="section location-section"
+            id="location"
+        >
+            <div class="section-container location-grid">
+                <div class="location-copy">
+                    <span class="eyebrow">Our office</span>
 
-                    <h2>Accessible advice, delivered personally</h2>
+                    <h2>
+                        Accessible advice, delivered personally
+                    </h2>
 
-                    <p class="location-copy">
+                    <p>
                         Meet with us to discuss your business, its current
                         challenges and the opportunities ahead. Consultations
                         are available by appointment.
@@ -1133,15 +1071,15 @@
             </div>
         </section>
 
-        <section class="philosophy-banner" id="approach">
+        <section class="philosophy" id="approach">
             <div class="philosophy-container">
                 <h2>
                     Good accounting records the past.
-                    <span>Great advice shapes what comes next.</span>
+                    <em>Great advice shapes what comes next.</em>
                 </h2>
 
-                <div class="split-row">
-                    <div class="split-col">
+                <div class="principles">
+                    <div>
                         <h3>Commercial clarity</h3>
 
                         <p>
@@ -1151,7 +1089,7 @@
                         </p>
                     </div>
 
-                    <div class="split-col">
+                    <div>
                         <h3>Structured foresight</h3>
 
                         <p>
@@ -1164,10 +1102,10 @@
             </div>
         </section>
 
-        <section class="section-contact" id="contact">
-            <div class="contact-container">
-                <div class="contact-intro">
-                    <span class="section-kicker">
+        <section class="section" id="contact">
+            <div class="section-container contact-grid">
+                <div class="contact-copy">
+                    <span class="eyebrow">
                         Start a conversation
                     </span>
 
@@ -1179,40 +1117,34 @@
                         discussion.
                     </p>
 
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <strong>Email</strong>
+                    <div class="contact-item">
+                        <strong>Email</strong>
 
+                        hello@vestraaccounting.co.uk
                             hello@vestraaccounting.co.uk
-                                hello@vestraaccounting.co.uk
-                            </a>
-                        </div>
+                        </a>
+                    </div>
 
-                        <div class="contact-item">
-                            <strong>Telephone</strong>
+                    <div class="contact-item">
+                        <strong>Telephone</strong>
+                        <span>Telephone number to be added</span>
+                    </div>
 
-                            <span>Telephone number to be added</span>
-                        </div>
-
-                        <div class="contact-item">
-                            <strong>Office hours</strong>
-
-                            <span>
-                                Monday to Friday, 9:00am to 5:30pm
-                            </span>
-                        </div>
+                    <div class="contact-item">
+                        <strong>Office hours</strong>
+                        <span>Monday to Friday, 9:00am to 5:30pm</span>
                     </div>
                 </div>
 
                 <!--
-                    This form is structurally complete but requires a
-                    form-processing service before it can send enquiries.
-                    Replace action="#" with your form-processing endpoint.
+                    GitHub Pages cannot process forms by itself.
+                    Replace action="#" with a form service endpoint
+                    before using this form to receive enquiries.
                 -->
 
                 #
                     <div class="form-grid">
-                        <div class="form-group">
+                        <div class="field">
                             <label for="name">Your name</label>
 
                             <input
@@ -1224,7 +1156,7 @@
                             >
                         </div>
 
-                        <div class="form-group">
+                        <div class="field">
                             <label for="company">Company name</label>
 
                             <input
@@ -1235,7 +1167,7 @@
                             >
                         </div>
 
-                        <div class="form-group">
+                        <div class="field">
                             <label for="email">Email address</label>
 
                             <input
@@ -1247,7 +1179,7 @@
                             >
                         </div>
 
-                        <div class="form-group">
+                        <div class="field">
                             <label for="telephone">Telephone</label>
 
                             <input
@@ -1258,7 +1190,7 @@
                             >
                         </div>
 
-                        <div class="form-group full-width">
+                        <div class="field field-full">
                             <label for="service">Area of interest</label>
 
                             <select id="service" name="service">
@@ -1284,8 +1216,10 @@
                             </select>
                         </div>
 
-                        <div class="form-group full-width">
-                            <label for="message">How can we help?</label>
+                        <div class="field field-full">
+                            <label for="message">
+                                How can we help?
+                            </label>
 
                             <textarea
                                 id="message"
@@ -1294,15 +1228,16 @@
                             ></textarea>
                         </div>
 
-                        <div class="form-group full-width">
-                            <p class="form-note">
-                                Please do not include passwords, bank details
-                                or other sensitive information in this form.
-                            </p>
-                        </div>
+                        <p class="form-note field-full">
+                            Please do not include passwords, bank details or
+                            other sensitive information in this form.
+                        </p>
 
-                        <div class="form-group full-width">
-                            <button class="submit-button" type="submit">
+                        <div class="field-full">
+                            <button
+                                class="submit-button"
+                                type="submit"
+                            >
                                 Submit enquiry
                             </button>
                         </div>
@@ -1314,15 +1249,15 @@
 
     <footer class="site-footer">
         <div class="footer-container">
-            <div class="footer-top">
+            <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="logo-area">
                         <span class="logo-mark" aria-hidden="true">
-                            <span class="logo-text-v">V</span>
+                            <span>V</span>
                         </span>
 
                         <span class="logo-title">
-                            Vestra <span>Accounting</span>
+                            Vestra <em>Accounting</em>
                         </span>
                     </div>
 
@@ -1335,12 +1270,12 @@
                 <div>
                     <h2 class="footer-heading">Navigation</h2>
 
-                    <nav class="footer-links" aria-label="Footer navigation">
+                    <div class="footer-links">
                         #servicesServices</a>
                         #approachOur approach</a>
                         #locationLocation</a>
                         #contactContact</a>
-                    </nav>
+                    </div>
                 </div>
 
                 <div>
@@ -1357,7 +1292,8 @@
 
             <div class="footer-bottom">
                 <span>
-                    &copy; 2026 Vestra Accounting Ltd. All rights reserved.
+                    &copy; 2026 Vestra Accounting Ltd.
+                    All rights reserved.
                 </span>
 
                 <span>
