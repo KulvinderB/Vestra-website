@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vestra Accountants | Proactive Accounting & Tax Planning</title>
+    <!-- Tailwind CSS for styling and responsiveness -->
+    <script src="https://tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0F172A',
+                            gold: '#D97706',
+                            slate: '#475569',
+                            light: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-light font-sans text-brand-navy antialiased">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold tracking-tight text-brand-navy">
+                Vestra<span class="text-brand-gold">Accountants</span>
+            </div>
+            <nav class="hidden md:flex space-x-8 font-medium text-brand-slate">
+                <a href="#home" class="hover:text-brand-gold transition">Home</a>
+                <a href="#services" class="hover:text-brand-gold transition">Services</a>
+                <a href="#why-us" class="hover:text-brand-gold transition">Why Vestra</a>
+                <a href="#contact" class="hover:text-brand-gold transition">Contact</a>
+            </nav>
+            <div>
+                <a href="#contact" class="bg-brand-navy text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-brand-gold transition text-sm">Book Consultation</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 lg:py-32 bg-gradient-to-b from-white to-brand-light">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-navy mb-6">
+                Proactive Accounting to <br class="hidden sm:inline"><span class="text-brand-gold">Scale Your Business</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-brand-slate max-w-2xl mx-auto mb-10 leading-relaxed">
+                At Vestra Accountants, we handle your compliance, strategic tax planning, and books so you can focus entirely on commercial growth.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#contact" class="w-full sm:w-auto bg-brand-navy text-white text-center px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-brand-gold transition">
+                    Schedule a Free Discovery Call
+                </a>
+                <a href="#services" class="w-full sm:w-auto bg-white border border-slate-200 text-brand-navy text-center px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition">
+                    Explore Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-brand-navy mb-4">Our Core Specialisms</h2>
+                <p class="text-brand-slate">Expert financial architecture tailored to modern businesses and corporate structures.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-brand-light hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-100 text-brand-gold flex items-center justify-center rounded-xl mb-6 font-bold text-xl">£</div>
+                    <h3 class="text-xl font-bold mb-3">Corporate & SME Tax</h3>
+                    <p class="text-brand-slate text-sm leading-relaxed">
+                        Year-end financial accounts, comprehensive corporation tax returns, and strategic tax planning designed to legally protect your margins.
+                    </p>
+                </div>
+                <!-- Service 2 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-brand-light hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-100 text-brand-gold flex items-center justify-center rounded-xl mb-6 font-bold text-xl">⚙️</div>
+                    <h3 class="text-xl font-bold mb-3">Cloud Bookkeeping</h3>
+                    <p class="text-brand-slate text-sm leading-relaxed">
+                        Real-time cashflow optimization, seamless VAT compliance, and precise digital payroll using automated modern ecosystems like Xero and QuickBooks.
+                    </p>
+                </div>
+                <!-- Service 3 -->
+                <div class="p-8 rounded-2xl border border-slate-100 bg-brand-light hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-amber-100 text-brand-gold flex items-center justify-center rounded-xl mb-6 font-bold text-xl">📈</div>
+                    <h3 class="text-xl font-bold mb-3">Strategic Advisory</h3>
+                    <p class="text-brand-slate text-sm leading-relaxed">
+                        Custom management reporting, reliable corporate financial forecasting, and active strategic guidance to drive stable commercial expansion.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop / Why Us Section -->
+    <section id="why-us" class="py-20 bg-brand-navy text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-6">Why Progressive Companies Partner with Vestra</h2>
+                    <p class="text-slate-300 mb-8 leading-relaxed">
+                        We don't just calculate historical numbers; we translate them into actionable corporate intelligence. We clear operational bottlenecks so you scale with clarity.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-brand-gold text-lg">✓</span>
+                            <div><strong>Transparent Fixed Fees:</strong> No hidden billing surprises. Predictable monthly investments.</div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-brand-gold text-lg">✓</span>
+                            <div><strong>Dedicated Advisory Line:</strong> Fast direct support from an expert who intimately knows your business.</div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-brand-gold text-lg">✓</span>
+                            <div><strong>Fully Paperless Workflows:</strong> Modern, secure digital processes optimized for remote efficiency.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl">
+                    <h4 class="text-2xl font-bold mb-2">Ready to modernise your numbers?</h4>
+                    <p class="text-slate-300 text-sm mb-6">Our standard onboarding process takes less than 7 days from initial strategy audit to active compliance setup.</p>
+                    <a href="#contact" class="inline-block bg-brand-gold text-brand-navy px-6 py-3 rounded-lg font-bold hover:bg-white transition text-center w-full">Request a Free Setup Review</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-brand-light">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-brand-navy mb-4">Book Your Free Discovery Call</h2>
+                <p class="text-brand-slate">Tell us a bit about your operational challenges and we'll map out a custom management framework.</p>
+            </div>
+            
+            <!-- Simple functional front-end contact form template -->
+            <form class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 space-y-6">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-slate mb-2">Full Name</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-brand-slate mb-2">Company Name</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-brand-slate mb-2">Corporate Email Address</label>
+                    <input type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-gold">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-brand-slate mb-2">How can we help your business?</label>
