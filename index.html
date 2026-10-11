@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vestra Accountants Ltd | Corporate Advisory & Tax Architecture</title>
+    <!-- Universally trusted web style layer that Cloudflare cannot strip -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        /* CSS resets and premium corporate color variables */
         :root {
             --vestra-dark: #0B111E;
             --vestra-slate: #1E293B;
@@ -13,182 +14,143 @@
             --vestra-text: #475569;
             --vestra-bg: #F8FAFC;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { 
-            background-color: var(--vestra-bg); 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            color: var(--vestra-dark); 
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        /* Layout structures */
-        .ribbon {
-            background-color: var(--vestra-dark);
-            border-bottom: 1px solid #1e293b;
-            color: var(--vestra-gold);
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            padding: 10px 24px;
-            text-align: center;
-        }
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo-area { display: flex; align-items: center; gap: 10px; }
-        .logo-mark {
-            width: 28px;
-            height: 28px;
-            background-color: var(--vestra-dark);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transform: rotate(45deg);
-            border: 1px solid var(--vestra-gold);
-        }
-        .logo-text-v { color: white; transform: rotate(-45deg); font-weight: bold; font-size: 11px; }
-        .logo-title { font-size: 20px; font-weight: 500; tracking: -0.02em; }
-        .logo-title span { color: var(--vestra-gold); font-style: italic; font-family: Georgia, serif; }
-        nav { display: none; gap: 40px; }
-        @media (min-width: 768px) { nav { display: flex; } }
-        nav a {
-            text-transform: uppercase;
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            color: #64748b;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        nav a:hover { color: var(--vestra-dark); }
-        .btn-header {
-            border: 1px solid var(--vestra-dark);
-            color: var(--vestra-dark);
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 12px 24px;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        .btn-header:hover { background-color: var(--vestra-dark); color: white; }
-        
-        /* Hero section components */
-        .hero { background-color: white; padding: 80px 24px; border-bottom: 1px solid #e2e8f0; }
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-        @media (min-width: 1024px) { 
-            .hero { padding: 120px 24px; }
-            .hero-container { grid-template-columns: 7fr 5fr; } 
-        }
-        .hero-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--vestra-gold); margin-bottom: 16px; display: block; }
-        .hero h1 { font-family: Georgia, serif; font-size: 42px; line-height: 1.15; font-weight: 600; margin-bottom: 32px; }
-        @media (min-width: 640px) { .hero h1 { font-size: 54px; } }
-        .hero h1 span { color: var(--vestra-gold); font-style: italic; font-weight: 400; }
-        .hero p { color: var(--vestra-text); font-size: 17px; font-weight: 300; max-width: 550px; margin-bottom: 40px; }
-        .hero-actions { display: flex; flex-direction: column; gap: 16px; }
-        @media (min-width: 640px) { .hero-actions { flex-direction: row; } }
-        .btn-primary {
-            background-color: var(--vestra-dark);
-            color: white;
-            text-align: center;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 16px 32px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
+        body { background-color: #F8FAFC; color: #0B111E; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .bg-vestra-dark { background-color: var(--vestra-dark); }
+        .text-vestra-gold { color: var(--vestra-gold); }
+        .border-vestra-gold { border-color: var(--vestra-gold); }
+        .text-vestra-text { color: var(--vestra-text); }
+        .btn-primary { background-color: var(--vestra-dark); color: white; transition: background-color 0.3s; }
         .btn-primary:hover { background-color: var(--vestra-gold); }
-        .btn-secondary {
-            border: 1px solid #e2e8f0;
-            color: var(--vestra-dark);
-            text-align: center;
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            padding: 16px 32px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .btn-secondary:hover { background-color: #f8fafc; }
+        .btn-header { border: 1px solid var(--vestra-dark); color: var(--vestra-dark); transition: all 0.3s; }
+        .btn-header:hover { background-color: var(--vestra-dark); color: white; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- Top Announcement Ribbon -->
+    <div class="bg-vestra-dark text-center py-2.5 px-4 text-xs font-semibold tracking-widest text-vestra-gold uppercase border-b border-gray-800">
+        Strategic Corporate Tax Architecture & Capital Restructuring • 2026 Financial Briefings Open
+    </div>
+
+    <!-- Executive Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-vestra-dark flex items-center justify-center transform rotate-45 border border-vestra-gold">
+                    <span class="text-xs text-white transform -rotate-45 font-serif font-bold">V</span>
+                </div>
+                <div class="text-xl font-bold tracking-tight">
+                    VESTRA <span class="text-vestra-gold font-normal italic font-serif">Accountants Ltd</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-wider text-gray-500">
+                <a href="#home" class="hover:text-gray-900 transition">Overview</a>
+                <a href="#expertise" class="hover:text-gray-900 transition">Expertise</a>
+                <a href="#location" class="hover:text-gray-900 transition">Location</a>
+                <a href="#consultation" class="hover:text-gray-900 transition">Engagement</a>
+            </nav>
+            <div>
+                <a href="#consultation" class="btn-header text-xs font-bold uppercase tracking-wider px-5 py-3 transition">
+                    Secure Consultation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
         
-        /* Stats Grid */
-        .stats-matrix {
-            background-color: var(--vestra-bg);
-            padding: 32px;
-            border: 1px solid #e2e8f0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        .stat-card { background-color: white; padding: 24px; border: 1px solid #f1f5f9; }
-        .stat-num { font-family: Georgia, serif; font-size: 28px; font-weight: 700; margin-bottom: 4px; }
-        .stat-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; }
-        
-        /* Capabilities Grid */
-        .section-capabilities { padding: 96px 24px; }
-        .section-wrap { max-width: 1200px; margin: 0 auto; }
-        .section-header { display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 60px; gap: 24px; }
-        @media (min-width: 768px) { .section-header { flex-direction: row; align-items: flex-end; } }
-        .section-title h2 { font-family: Georgia, serif; font-size: 32px; font-weight: 600; }
-        .section-desc { color: var(--vestra-text); font-size: 14px; font-weight: 300; max-width: 350px; }
-        .grid-blueprint { display: grid; grid-template-columns: 1fr; border: 1px solid #e2e8f0; background-color: white; }
-        @media (min-width: 768px) { .grid-blueprint { grid-template-columns: 1fr 1fr 1fr; } }
-        .blueprint-card { padding: 40px; border-bottom: 1px solid #e2e8f0; transition: background-color 0.2s; }
-        @media (min-width: 768px) { .blueprint-card { border-bottom: none; border-right: 1px solid #e2e8f0; } .blueprint-card:last-child { border-right: none; } }
-        .blueprint-card:hover { background-color: #fafafa; }
-        .card-num { color: var(--vestra-gold); font-family: Georgia, serif; font-style: italic; font-size: 20px; margin-bottom: 32px; }
-        .card-title { font-size: 18px; font-weight: 600; margin-bottom: 16px; }
-        .card-text { color: var(--vestra-text); font-size: 14px; font-weight: 300; margin-bottom: 24px; }
-        .card-list { list-style: none; font-size: 12px; color: #64748b; font-weight: 500; }
-        .card-list li { margin-bottom: 8px; }
+        <!-- Hero Section -->
+        <section id="home" class="bg-white py-20 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <span class="text-xs font-bold uppercase tracking-widest text-vestra-gold block mb-3">Corporate Intelligence & Advisory</span>
+                    <h1 class="text-4xl sm:text-5xl font-serif font-bold tracking-tight text-gray-900 leading-tight mb-6">
+                        Financial clarity for businesses focused on <span class="text-vestra-gold italic font-normal">scale</span>.
+                    </h1>
+                    <p class="text-gray-600 text-lg font-light mb-8 max-w-xl">
+                        We build robust tax configurations, real-time corporate compliance, and clear asset protections, acting as dedicated corporate architects for scaling firms.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#consultation" class="btn-primary text-center text-xs font-bold uppercase tracking-wider px-6 py-4 transition shadow-md">
+                            Initiate Discovery Protocol
+                        </a>
+                        <a href="#expertise" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-center text-xs font-bold uppercase tracking-wider px-6 py-4 transition">
+                            Examine Capabilities
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Corporate Stats Matrix -->
+                <div class="md:col-span-5 grid grid-cols-2 gap-4 bg-gray-50 p-6 border border-gray-200">
+                    <div class="bg-white p-6 border border-gray-100 shadow-sm">
+                        <div class="text-2xl font-bold text-gray-900 font-serif mb-1">99.4%</div>
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Compliance Rate</div>
+                    </div>
+                    <div class="bg-white p-6 border border-gray-100 shadow-sm">
+                        <div class="text-2xl font-bold text-gray-900 font-serif mb-1">£42M+</div>
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Capital Managed</div>
+                    </div>
+                    <div class="bg-white p-6 border border-gray-100 shadow-sm">
+                        <div class="text-2xl font-bold text-gray-900 font-serif mb-1">15+</div>
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Years Advisory</div>
+                    </div>
+                    <div class="bg-white p-6 border border-gray-100 shadow-sm">
+                        <div class="text-2xl font-bold text-vestra-gold font-serif mb-1">XERO</div>
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Platinum Partner</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        /* Office Location Section */
-        .section-location { padding: 96px 24px; background-color: var(--vestra-bg); border-top: 1px solid #e2e8f0; }
-        .location-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
-        @media (min-width: 768px) { .location-container { grid-template-columns: 1fr 1fr; } }
-        .location-info h2 { font-family: Georgia, serif; font-size: 32px; margin-bottom: 16px; }
-        .location-info p { color: var(--vestra-text); font-size: 15px; margin-bottom: 24px; font-weight: 300; }
-        .address-box { background-color: white; padding: 32px; border: 1px solid #e2e8f0; }
-        .address-box h3 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--vestra-gold); margin-bottom: 12px; }
-        .address-box p { color: var(--vestra-dark); font-size: 16px; font-weight: 400; line-height: 1.5; margin-bottom: 0; }
-        .map-placeholder { background-color: #e2e8f0; height: 300px; width: 100%; border: 1px solid #cbd5e1; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+        <!-- Capabilities Blueprint Section -->
+        <section id="expertise" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-vestra-gold block mb-2">Core Frameworks</span>
+                        <h2 class="text-3xl font-serif font-bold text-gray-900">Structured Capabilities</h2>
+                    </div>
+                    <p class="text-gray-500 text-sm max-w-xs font-light">
+                        We replace historical record-keeping with real-time strategic alignment, securing corporate resilience.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 bg-white border border-gray-200 shadow-sm divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                    <div class="p-8 hover:bg-gray-50 transition">
+                        <div class="text-vestra-gold font-serif italic text-lg mb-6">01 //</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Corporate Financial Architecture</h3>
+                        <p class="text-gray-600 text-sm font-light leading-relaxed mb-6">
+                            Advanced tax structural builds, multi-tier corporate structuring, cross-border transactional analysis, and rigorous asset preservation.
+                        </p>
+                        <ul class="text-xs font-semibold text-gray-400 space-y-1">
+                            <li>• Restructuring & Formations</li>
+                            <li>• Research & Development Tax Credits</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 hover:bg-gray-50 transition">
+                        <div class="text-vestra-gold font-serif italic text-lg mb-6">02 //</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Real-Time Cloud Compliance</h3>
+                        <p class="text-gray-600 text-sm font-light leading-relaxed mb-6">
+                            Automated corporate ledger workflows, strict algorithmic VAT reporting, smart multi-entity consolidation, and dynamic advisory oversight.
+                        </p>
+                        <ul class="text-xs font-semibold text-gray-400 space-y-1">
+                            <li>• Xero Ecosystem Cloud Buildout</li>
+                            <li>• Automated Strategic Payroll Modules</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 hover:bg-gray-50 transition">
+                        <div class="text-vestra-gold font-serif italic text-lg mb-6">03 //</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Commercial Intelligence</h3>
+                        <p class="text-gray-600 text-sm font-light leading-relaxed mb-6">
+                            Custom financial dashboard models, detailed run-rate projections, rigorous capital risk profiling, and structural exit planning.
+                        </p>
+                        <ul class="text-xs font-semibold text-gray-400 space-y-1">
+                            <li>• Monthly Strategic Cashflow Audits</li>
+                            <li>• Scaled Growth Capital Modeling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        /* Corporate Philosophy Banner */
-        .philosophy-banner { background-color: var(--vestra-dark); color: white; padding: 96px 24px; }
-        .philosophy-container { max-width: 800px; margin: 0 auto; }
-        .philosophy-banner h2 { font-family: Georgia, serif; font-size: 36px; line-height: 1.2; font-weight: 400; margin-bottom: 48px; }
-        .philosophy-banner h2 span { color: var(--vestra-gold); font-style: italic; }
-        .split-row { display: grid; grid-template-columns: 1fr; gap: 48px; border-top: 1px solid #1e293b; padding-top: 48px; }
-        @media (min-width: 640px) { .split-row { grid-template-columns: 1fr 1fr; } }
-        .split-col h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--vestra-gold); margin-bottom: 12px; }
-        .split-col p { color: #94a3b8; font-size: 14px; font-weight: 300; }
-
-        /* Clean Engagement Form layout */
-        .section-form { padding: 96px 24px; background-color: white; }
-        .form-wrap { max-width: 700px; margin: 0 auto; }
