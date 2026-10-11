@@ -2,15 +2,11 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Vestra Accounting Ltd provides accounting, tax planning and corporate advisory services for businesses in London and Essex."
+        content="Vestra Accounting Ltd provides accounting, taxation and corporate advisory services for owner-managed businesses, entrepreneurs and growing companies."
     >
 
     <title>Vestra Accounting Ltd | Accountants &amp; Corporate Advisers</title>
@@ -56,15 +52,16 @@
         }
 
         img,
-        svg {
+        svg,
+        iframe {
             display: block;
             max-width: 100%;
         }
 
         button,
         input,
-        textarea,
-        select {
+        select,
+        textarea {
             font: inherit;
         }
 
@@ -73,7 +70,7 @@
         }
 
         section {
-            scroll-margin-top: 100px;
+            scroll-margin-top: 110px;
         }
 
         :focus-visible {
@@ -95,9 +92,9 @@
             text-transform: uppercase;
         }
 
-        /* Header and navigation */
+        /* Header */
 
-        header {
+        .site-header {
             position: sticky;
             top: 0;
             z-index: 50;
@@ -158,13 +155,13 @@
             font-style: italic;
         }
 
-        nav {
+        .main-nav {
             display: none;
             align-items: center;
             gap: 36px;
         }
 
-        nav a {
+        .main-nav a {
             color: #64748b;
             font-size: 11px;
             font-weight: 600;
@@ -174,7 +171,7 @@
             transition: color 0.2s ease;
         }
 
-        nav a:hover {
+        .main-nav a:hover {
             color: var(--vestra-dark);
         }
 
@@ -199,7 +196,7 @@
         }
 
         @media (min-width: 768px) {
-            nav {
+            .main-nav {
                 display: flex;
             }
 
@@ -225,13 +222,14 @@
             gap: 48px;
         }
 
-        .hero-tag {
+        .hero-tag,
+        .section-kicker {
             display: block;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             color: var(--vestra-gold);
             font-size: 11px;
             font-weight: 700;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
         }
 
@@ -251,7 +249,7 @@
             font-weight: 400;
         }
 
-        .hero p {
+        .hero-copy {
             max-width: 580px;
             margin-bottom: 40px;
             color: var(--vestra-text);
@@ -302,24 +300,6 @@
             border-color: #cbd5e1;
         }
 
-        @media (min-width: 640px) {
-            .hero-actions {
-                flex-direction: row;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .hero {
-                padding: 100px 24px;
-            }
-
-            .hero-container {
-                grid-template-columns: 7fr 5fr;
-            }
-        }
-
-        /* Statistics */
-
         .stats-matrix {
             display: grid;
             grid-template-columns: 1fr;
@@ -352,12 +332,28 @@
 
         @media (min-width: 420px) {
             .stats-matrix {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
                 padding: 32px;
             }
         }
 
-        /* Shared section styles */
+        @media (min-width: 640px) {
+            .hero-actions {
+                flex-direction: row;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero {
+                padding: 100px 24px;
+            }
+
+            .hero-container {
+                grid-template-columns: 7fr 5fr;
+            }
+        }
+
+        /* Shared sections */
 
         .section-wrap {
             max-width: 1200px;
@@ -372,17 +368,9 @@
             gap: 24px;
         }
 
-        .section-kicker {
-            display: block;
-            margin-bottom: 10px;
-            color: var(--vestra-gold);
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-        }
-
-        .section-title h2 {
+        .section-title h2,
+        .location-info h2,
+        .contact-intro h2 {
             font-family: Georgia, "Times New Roman", serif;
             font-size: clamp(2rem, 4vw, 2.5rem);
             font-weight: 600;
@@ -507,12 +495,9 @@
 
         .location-info h2 {
             margin-bottom: 16px;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            line-height: 1.2;
         }
 
-        .location-info > p {
+        .location-copy {
             margin-bottom: 24px;
             color: var(--vestra-text);
             font-size: 15px;
@@ -595,7 +580,7 @@
 
         @media (min-width: 768px) {
             .location-container {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -650,11 +635,11 @@
 
         @media (min-width: 640px) {
             .split-row {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        /* Contact section */
+        /* Contact */
 
         .section-contact {
             padding: 96px 24px;
@@ -666,6 +651,7 @@
             grid-template-columns: 1fr;
             max-width: 1200px;
             margin: 0 auto;
+            overflow: hidden;
             background-color: var(--vestra-white);
             border: 1px solid var(--vestra-border);
         }
@@ -677,9 +663,6 @@
 
         .contact-intro h2 {
             margin-bottom: 20px;
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            line-height: 1.2;
         }
 
         .contact-intro > p {
@@ -799,7 +782,7 @@
 
         @media (min-width: 700px) {
             .form-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -816,7 +799,7 @@
 
         /* Footer */
 
-        footer {
+        .site-footer {
             padding: 56px 24px 24px;
             background-color: #070b13;
             color: var(--vestra-white);
@@ -931,7 +914,7 @@
             }
         }
 
-        /* Accessibility */
+        /* Reduced motion */
 
         @media (prefers-reduced-motion: reduce) {
             html {
@@ -954,7 +937,7 @@
         Strategic accounting for ambitious businesses
     </div>
 
-    <header>
+    <header class="site-header">
         <div class="nav-container">
             #home
                 <span class="logo-mark" aria-hidden="true">
@@ -966,7 +949,7 @@
                 </span>
             </a>
 
-            <nav aria-label="Main navigation">
+            <nav class="main-nav" aria-label="Main navigation">
                 #servicesServices</a>
                 #approachApproach</a>
                 #locationLocation</a>
@@ -982,7 +965,7 @@
     <main>
         <section class="hero" id="home">
             <div class="hero-container">
-                <div class="hero-content">
+                <div>
                     <span class="hero-tag">
                         Corporate advisory &amp; tax architecture
                     </span>
@@ -992,7 +975,7 @@
                         <span>Structure for tomorrow.</span>
                     </h1>
 
-                    <p>
+                    <p class="hero-copy">
                         We provide commercially focused accounting, tax and
                         advisory support for owner-managed businesses,
                         entrepreneurs and growing companies.
@@ -1038,6 +1021,7 @@
                 <div class="section-header">
                     <div class="section-title">
                         <span class="section-kicker">Our capabilities</span>
+
                         <h2>Accounting built around your objectives</h2>
                     </div>
 
@@ -1117,7 +1101,7 @@
 
                     <h2>Accessible advice, delivered personally</h2>
 
-                    <p>
+                    <p class="location-copy">
                         Meet with us to discuss your business, its current
                         challenges and the opportunities ahead. Consultations
                         are available by appointment.
@@ -1128,23 +1112,21 @@
 
                         <p>
                             Vestra Accounting Ltd<br>
-                            BEC50<br>
-                            Cambridge Road<br>
-                            Barking<br>
-                            Essex<br>
+                            BEC50, Cambridge Road<br>
+                            Barking, Essex<br>
                             IG11 8FG
                         </p>
 
-                        https://www.google.com/maps/search/?api=1&amp;query=BEC50+Cambridge+Road+Barking+Essex+IG11+8FG
+                        https://www.google.com/maps/search/?api=1&amp;query=BEC50%2C+Cambridge+Road%2C+Barking%2C+Essex%2C+IG11+8FG
                             View directions
                         </a>
                     </address>
                 </div>
 
                 <div class="map-wrapper">
-                    https://maps.google.com/maps?q=BEC50%20Cambridge%20Road%20Barking%20Essex%20IG11%208FG&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=&amp;output=embed</iframe>
+                    https://maps.google.com/maps?q=BEC50%2C%20Cambridge%20Road%2C%20Barking%2C%20Essex%2C%20IG11%208FG&amp;z=16&amp;output=embed</iframe>
 
-                    https://www.google.com/maps/search/?api=1&amp;query=BEC50+Cambridge+Road+Barking+Essex+IG11+8FG
+                    https://www.google.com/maps/search/?api=1&amp;query=BEC50%2C+Cambridge+Road%2C+Barking%2C+Essex%2C+IG11+8FG
                         Open in Google Maps
                     </a>
                 </div>
@@ -1209,9 +1191,7 @@
                         <div class="contact-item">
                             <strong>Telephone</strong>
 
-                            tel:+440000000000
-                                +44 (0) 0000 000 000
-                            </a>
+                            <span>Telephone number to be added</span>
                         </div>
 
                         <div class="contact-item">
@@ -1225,10 +1205,9 @@
                 </div>
 
                 <!--
-                    This form is currently visual only.
-
-                    Replace action="#" with your form-processing URL
-                    when you are ready to receive enquiries.
+                    This form is structurally complete but requires a
+                    form-processing service before it can send enquiries.
+                    Replace action="#" with your form-processing endpoint.
                 -->
 
                 #
@@ -1333,7 +1312,7 @@
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-top">
                 <div class="footer-brand">
@@ -1356,12 +1335,12 @@
                 <div>
                     <h2 class="footer-heading">Navigation</h2>
 
-                    <div class="footer-links">
+                    <nav class="footer-links" aria-label="Footer navigation">
                         #servicesServices</a>
                         #approachOur approach</a>
                         #locationLocation</a>
                         #contactContact</a>
-                    </div>
+                    </nav>
                 </div>
 
                 <div>
@@ -1378,13 +1357,11 @@
 
             <div class="footer-bottom">
                 <span>
-                    &copy; 2026 Vestra Accounting Ltd.
-                    All rights reserved.
+                    &copy; 2026 Vestra Accounting Ltd. All rights reserved.
                 </span>
 
                 <span>
                     Registered in England and Wales.
-                    Company number: XXXXXXXX.
                 </span>
             </div>
         </div>
