@@ -3,39 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vestra Accountants Ltd</title>
+    <title>Vestra Accountants Ltd | Corporate Advisory & Tax Architecture</title>
+    <!-- Premium, trusted style layers loaded via a highly stable framework -->
+    <link rel="stylesheet" href="https://cloudflare.com">
     <style>
-        body {
-            background-color: #0B111E;
-            color: #C5A880;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            text-align: center;
-            padding: 24px;
+        :root {
+            --vestra-dark: #0B111E;
+            --vestra-slate: #1E293B;
+            --vestra-gold: #C5A880;
+            --vestra-text: #475569;
+            --vestra-bg: #F8FAFC;
         }
-        h1 {
-            font-size: 48px;
-            margin-bottom: 12px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-        }
-        p {
-            color: #94a3b8;
-            font-size: 18px;
-            max-width: 500px;
-            line-height: 1.6;
-        }
+        body { background-color: #F8FAFC; color: #0B111E; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .bg-vestra-dark { background-color: var(--vestra-dark); }
+        .text-vestra-gold { color: var(--vestra-gold); }
+        .border-vestra-gold { border-color: var(--vestra-gold); }
+        .text-vestra-text { color: var(--vestra-text); }
+        .btn-primary { background-color: var(--vestra-dark); color: white; transition: background-color 0.3s; }
+        .btn-primary:hover { background-color: var(--vestra-gold); }
+        .btn-header { border: 1px solid var(--vestra-dark); color: var(--vestra-dark); transition: all 0.3s; }
+        .btn-header:hover { background-color: var(--vestra-dark); color: white; }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-900 antialiased min-h-screen flex flex-col justify-between">
 
-    <h1>Hello</h1>
-    <p>Vestra Accountants Ltd website deployment test is operational.</p>
+    <!-- Top Announcement Ribbon -->
+    <div class="bg-vestra-dark text-center py-2.5 px-4 text-xs font-semibold tracking-widest text-vestra-gold uppercase border-b border-gray-800">
+        Strategic Corporate Tax Architecture & Capital Restructuring • 2026 Financial Briefings Open
+    </div>
 
-</body>
-</html>
+    <!-- Executive Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-vestra-dark flex items-center justify-center transform rotate-45 border border-vestra-gold">
+                    <span class="text-xs text-white transform -rotate-45 font-serif font-bold">V</span>
+                </div>
+                <div class="text-xl font-bold tracking-tight">
+                    VESTRA <span class="text-vestra-gold font-normal italic font-serif">Accountants Ltd</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-wider text-gray-500">
+                <a href="#home" class="hover:text-gray-900 transition">Overview</a>
+                <a href="#expertise" class="hover:text-gray-900 transition">Expertise</a>
+                <a href="#location" class="hover:text-gray-900 transition">Location</a>
+                <a href="#consultation" class="hover:text-gray-900 transition">Engagement</a>
+            </nav>
+            <div>
+                <a href="#consultation" class="btn-header text-xs font-bold uppercase tracking-wider px-5 py-3 transition">
+                    Secure Consultation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+        
+        <!-- Hero Section -->
+        <section id="home" class="bg-white py-20 border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7">
+                    <span class="text-xs font-bold uppercase tracking-widest text-vestra-gold block mb-3">Corporate Intelligence & Advisory</span>
+                    <h1 class="text-4xl sm:text-5xl font-serif font-bold tracking-tight text-gray-900 leading-tight mb-6">
+                        Financial clarity for businesses focused on <span class="text-vestra-gold italic font-normal">scale</span>.
+                    </h1>
+                    <p class="text-gray-600 text-lg font-light mb-8 max-w-xl">
+                        We build robust tax configurations, real-time corporate compliance, and clear asset protections, acting as dedicated corporate architects for scaling firms.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#consultation" class="btn-primary text-center text-xs font-bold uppercase tracking-wider px-6 py-4 transition shadow-md">
+                            Initiate Discovery Protocol
+                        </a>
+                        <a href="#expertise" class="bg-gray-100 hover:bg-gray-200 text-gray-800 text-center text-xs font-bold uppercase tracking-wider px-6 py-4 transition">
+                            Examine Capabilities
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Corporate Stats Matrix -->
+                <div class="md:col-span-5 grid grid-cols-2 gap-4 bg-gray-50 p-6 border border-gray-200">
+                    <div class="bg-white p-6 border border-gray-100 shadow-sm">
+                        <div class="text-2xl font-bold text-gray-900 font-serif mb-1">99.4%</div>
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Compliance Rate</div>
+                    </div>
+                    <div class="bg-white p-6 border border-gray-100 shadow-sm">
+                        <div class="text-2xl font-bold text-gray-900 font-serif mb-1">£42M+</div>
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Capital Managed</div>
+                    </div>
+                    <div class="bg-white p-6 border border-gray-100 shadow-sm">
+                        <div class="text-2xl font-bold text-gray-900 font-serif mb-1">15+</div>
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Years Advisory</div>
+                    </div>
+                    <div class="bg-white p-6 border border-gray-100 shadow-sm">
+                        <div class="text-2xl font-bold text-vestra-gold font-serif mb-1">XERO</div>
+                        <div class="text-[10px] font-bold uppercase tracking-wider text-gray-400">Platinum Partner</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capabilities Blueprint Section -->
+        <section id="expertise" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-vestra-gold block mb-2">Core Frameworks</span>
+                        <h2 class="text-3xl font-serif font-bold text-gray-900">Structured Capabilities</h2>
+                    </div>
+                    <p class="text-gray-500 text-sm max-w-xs font-light">
+                        We replace historical record-keeping with real-time strategic alignment, securing corporate resilience.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 bg-white border border-gray-200 shadow-sm divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                    <div class="p-8 hover:bg-gray-50 transition">
+                        <div class="text-vestra-gold font-serif italic text-lg mb-6">01 //</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Corporate Financial Architecture</h3>
+                        <p class="text-gray-600 text-sm font-light leading-relaxed mb-6">
+                            Advanced tax structural builds, multi-tier corporate structuring, cross-border transactional analysis, and rigorous asset preservation.
+                        </p>
+                        <ul class="text-xs font-semibold text-gray-400 space-y-1">
+                            <li>• Restructuring & Formations</li>
+                            <li>• Research & Development Tax Credits</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 hover:bg-gray-50 transition">
+                        <div class="text-vestra-gold font-serif italic text-lg mb-6">02 //</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Real-Time Cloud Compliance</h3>
+                        <p class="text-gray-600 text-sm font-light leading-relaxed mb-6">
+                            Automated corporate ledger workflows, strict algorithmic VAT reporting, smart multi-entity consolidation, and dynamic advisory oversight.
+                        </p>
+                        <ul class="text-xs font-semibold text-gray-400 space-y-1">
+                            <li>• Xero Ecosystem Cloud Buildout</li>
+                            <li>• Automated Strategic Payroll Modules</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 hover:bg-gray-50 transition">
+                        <div class="text-vestra-gold font-serif italic text-lg mb-6">03 //</div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-3">Commercial Intelligence</h3>
+                        <p class="text-gray-600 text-sm font-light leading-relaxed mb-6">
+                            Custom financial dashboard models, detailed run-rate projections, rigorous capital risk profiling, and structural exit planning.
+                        </p>
+                        <ul class="text-xs font-semibold text-gray-400 space-y-1">
+                            <li>• Monthly Strategic Cashflow Audits</li>
+                            <li>• Scaled Growth Capital Modeling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
