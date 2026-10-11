@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vestra Accountants | Corporate Advisory & Tax Architecture</title>
+    <title>Vestra Accountants Ltd | Corporate Advisory & Tax Architecture</title>
     <style>
         /* CSS resets and premium corporate color variables */
         :root {
@@ -168,6 +168,17 @@
         .card-list { list-style: none; font-size: 12px; color: #64748b; font-weight: 500; }
         .card-list li { margin-bottom: 8px; }
 
+        /* Office Location Section */
+        .section-location { padding: 96px 24px; background-color: var(--vestra-bg); border-top: 1px solid #e2e8f0; }
+        .location-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; }
+        @media (min-width: 768px) { .location-container { grid-template-columns: 1fr 1fr; } }
+        .location-info h2 { font-family: Georgia, serif; font-size: 32px; margin-bottom: 16px; }
+        .location-info p { color: var(--vestra-text); font-size: 15px; margin-bottom: 24px; font-weight: 300; }
+        .address-box { background-color: white; padding: 32px; border: 1px solid #e2e8f0; }
+        .address-box h3 { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--vestra-gold); margin-bottom: 12px; }
+        .address-box p { color: var(--vestra-dark); font-size: 16px; font-weight: 400; line-height: 1.5; margin-bottom: 0; }
+        .map-placeholder { background-color: #e2e8f0; height: 300px; width: 100%; border: 1px solid #cbd5e1; display: flex; align-items: center; justify-content: center; color: #64748b; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+
         /* Corporate Philosophy Banner */
         .philosophy-banner { background-color: var(--vestra-dark); color: white; padding: 96px 24px; }
         .philosophy-container { max-width: 800px; margin: 0 auto; }
@@ -181,26 +192,3 @@
         /* Clean Engagement Form layout */
         .section-form { padding: 96px 24px; background-color: white; }
         .form-wrap { max-width: 700px; margin: 0 auto; }
-        .form-intro { text-align: center; margin-bottom: 48px; }
-        .form-intro h2 { font-family: Georgia, serif; font-size: 32px; margin-bottom: 16px; }
-        .form-intro p { color: var(--vestra-text); font-size: 14px; font-weight: 300; }
-        .corporate-form { display: flex; flex-direction: column; gap: 24px; }
-        .form-row { display: grid; grid-template-columns: 1fr; gap: 24px; }
-        @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
-        .field-group { display: flex; flex-direction: column; gap: 8px; }
-        .field-group label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; }
-        .field-group input, .field-group select, .field-group textarea {
-            padding: 12px 16px;
-            border: 1px solid #cbd5e1;
-            font-size: 14px;
-            background-color: white;
-            border-radius: 0;
-            outline: none;
-            width: 100%;
-        }
-        .field-group input:focus, .field-group select:focus, .field-group textarea:focus { border-color: var(--vestra-dark); }
-        .btn-submit {
-            background-color: var(--vestra-dark);
-            color: white;
-            border: none;
-            font-size: 11px;
