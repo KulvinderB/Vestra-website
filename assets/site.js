@@ -1,12 +1,1 @@
-
-(function(){
- const toggle=document.querySelector('.menu-toggle'), menu=document.querySelector('.menu');
- if(toggle&&menu){toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')))}
- const KEY='vestraCookieConsent';
- function consent(){try{return JSON.parse(localStorage.getItem(KEY)||'null')}catch(e){return null}}
- function loadMaps(){document.querySelectorAll('[data-map-src]').forEach(el=>{if(!el.src)el.src=el.dataset.mapSrc});document.querySelectorAll('.map-placeholder').forEach(el=>el.classList.add('hidden'))}
- function apply(c){if(c&&c.functional)loadMaps();const b=document.getElementById('cookie-banner');if(b)b.classList.add('hidden')}
- function save(functional){const c={necessary:true,functional:functional,date:new Date().toISOString()};localStorage.setItem(KEY,JSON.stringify(c));apply(c)}
- window.VestraCookies={accept:()=>save(true),reject:()=>save(false),reset:()=>{localStorage.removeItem(KEY);location.reload()},loadMap:()=>save(true)};
- const c=consent(); if(c)apply(c); else {const b=document.getElementById('cookie-banner');if(b)b.classList.remove('hidden')}
-})();
+(function(){const t=document.querySelector('.menu-toggle'),m=document.querySelector('.menu');if(t&&m){t.addEventListener('click',()=>{const o=m.classList.toggle('open');t.setAttribute('aria-expanded',String(o))});m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.remove('open')))}const K='vestraCookieConsent';function read(){try{return JSON.parse(localStorage.getItem(K)||'null')}catch(e){return null}}function maps(){document.querySelectorAll('[data-map-src]').forEach(e=>{if(!e.src)e.src=e.dataset.mapSrc});document.querySelectorAll('.map-placeholder').forEach(e=>e.classList.add('hidden'))}function apply(c){if(c&&c.functional)maps();const b=document.getElementById('cookie-banner');if(b)b.classList.add('hidden')}function save(f){const c={necessary:true,functional:f,date:new Date().toISOString()};localStorage.setItem(K,JSON.stringify(c));apply(c)}window.VestraCookies={accept:()=>save(true),reject:()=>save(false),reset:()=>{localStorage.removeItem(K);location.reload()},loadMap:()=>save(true)};const c=read();if(c)apply(c);else{const b=document.getElementById('cookie-banner');if(b)b.classList.remove('hidden')}})();
