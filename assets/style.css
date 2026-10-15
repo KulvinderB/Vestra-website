@@ -25,3 +25,8 @@
 .stat{padding:40px;min-height:220px}.stat strong{font-size:72px;line-height:1;margin-bottom:14px}.stat span{font-size:16px;line-height:1.35;letter-spacing:.05em}
 @media(max-width:900px){.stat{min-height:190px}.stat strong{font-size:64px}.stat span{font-size:15px}}
 @media(max-width:520px){.stat{padding:28px;min-height:150px}.stat strong{font-size:54px}.stat span{font-size:14px}}
+
+/* v1.4.12 larger statistics labels */
+.stat span{font-size:20px;line-height:1.25;letter-spacing:.025em;font-weight:600;text-transform:none}
+@media(max-width:900px){.stat span{font-size:18px}}
+@media(max-width:520px){.stat span{font-size:16px}}
