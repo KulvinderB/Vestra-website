@@ -120,3 +120,36 @@ input,select,textarea,button{min-width:0;max-width:100%}
   .copyright,.footer-legal-links{max-width:100%}
   .cookie-banner{left:10px;right:10px;width:auto;max-width:calc(100% - 20px)}
 }
+
+/* v1.4.18 paragraph spacing rule */
+main p + p{margin-top:1em}
+main .prose p + p{margin-top:1.35em}
+main .prose h2 + p{margin-top:.65em}
+main .about-grid p + p,main .contact-copy p + p,main .address p + p,main .blog-empty p + p{margin-top:1.1em}
+main .card p + p{margin-top:1em}
+footer p + p{margin-top:0}
+@media(max-width:520px){main p + p{margin-top:.9em}main .prose p + p{margin-top:1.2em}}
+
+/* v1.4.19 content spacing and service-list indent */
+.cards .card ul{margin-top:1em;margin-left:2rem;padding-left:.5rem}
+.principles p + p{margin-top:1.25em !important}
+.service-cta{margin-top:1.5em !important}
+@media(max-width:520px){.cards .card ul{margin-left:1.25rem;padding-left:.35rem}.principles p + p{margin-top:1.1em !important}.service-cta{margin-top:1.3em !important}}
+
+/* v1.4.20 global paragraph spacing */
+main p{margin-top:1em;margin-bottom:1em}
+main p+ul,main p+ol{margin-top:1em}
+main h2+p,main h3+p{margin-top:1em}
+main .prose p{margin-top:1.25em;margin-bottom:1.25em}
+footer p{margin-top:0;margin-bottom:0}
+@media(max-width:520px){main p{margin-top:.9em;margin-bottom:.9em}main .prose p{margin-top:1.1em;margin-bottom:1.1em}}
+
+/* v1.4.21 spacing refinements */
+.principles h3{margin-bottom:1.75em !important}
+.principles p + p{margin-top:1.5em !important}
+.service-cta{margin-top:2.5em !important}
+@media(max-width:520px){
+ .principles h3{margin-bottom:1.5em !important}
+ .principles p + p{margin-top:1.25em !important}
+ .service-cta{margin-top:2em !important}
+}
