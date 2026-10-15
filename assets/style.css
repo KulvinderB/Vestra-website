@@ -20,3 +20,8 @@
 .stats{padding:30px;gap:18px}.stat{padding:30px;min-height:150px;display:flex;flex-direction:column;justify-content:center}.stat strong{font-size:48px;line-height:1;margin-bottom:10px}.stat span{font-size:13px;line-height:1.35;letter-spacing:.06em}
 @media(max-width:900px){.stats{max-width:680px;width:100%}}
 @media(max-width:520px){.stats{padding:20px;gap:12px}.stat{padding:24px;min-height:130px}.stat strong{font-size:42px}.stat span{font-size:12px}}
+
+/* v1.4.11 72px hero statistics */
+.stat{padding:40px;min-height:220px}.stat strong{font-size:72px;line-height:1;margin-bottom:14px}.stat span{font-size:16px;line-height:1.35;letter-spacing:.05em}
+@media(max-width:900px){.stat{min-height:190px}.stat strong{font-size:64px}.stat span{font-size:15px}}
+@media(max-width:520px){.stat{padding:28px;min-height:150px}.stat strong{font-size:54px}.stat span{font-size:14px}}
