@@ -15,3 +15,8 @@
 
 /* v1.4.9 hardened form validation */
 .form input:invalid:not(:placeholder-shown){border-color:#a12622}.form-status{font-weight:800}
+
+/* v1.4.10 larger hero statistics */
+.stats{padding:30px;gap:18px}.stat{padding:30px;min-height:150px;display:flex;flex-direction:column;justify-content:center}.stat strong{font-size:48px;line-height:1;margin-bottom:10px}.stat span{font-size:13px;line-height:1.35;letter-spacing:.06em}
+@media(max-width:900px){.stats{max-width:680px;width:100%}}
+@media(max-width:520px){.stats{padding:20px;gap:12px}.stat{padding:24px;min-height:130px}.stat strong{font-size:42px}.stat span{font-size:12px}}
