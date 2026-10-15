@@ -9,3 +9,6 @@
 
 /* v1.4.6 in-page contact form acknowledgement */
 .form-status{min-height:1.5em;margin-top:10px;font-size:14px;font-weight:600}.form-status.success{color:#23633d}.form-status.error{color:#a12622}.submit:disabled{cursor:wait;opacity:.7}
+
+/* v1.4.8 mandatory form fields and stronger acknowledgement */
+.required-mark{color:#a12622;font-weight:700}.form-status.success,.form-status.error{font-weight:800}.form-status.success{font-size:15px}
