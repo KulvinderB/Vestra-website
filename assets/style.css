@@ -237,3 +237,14 @@ footer p{margin-top:0;margin-bottom:0}
 /* Contact details remain prominent. */
 .contact-item strong,.contact-copy strong{font-size:20px !important;font-weight:600 !important}
 .contact-item a,.contact-copy a{font-size:19px !important;line-height:1.7 !important}
+
+/* v1.4.35 section-head correction */
+.section-head{display:block !important}
+.section-head>div{display:block !important}
+.section-head p{display:block !important;max-width:700px !important;margin:1rem 0 0 0 !important;text-align:left !important}
+
+/* v1.4.36 structural section-heading fix */
+.section-head-stacked{display:block !important}
+.section-head-stacked .eyebrow{display:block !important}
+.section-head-stacked h2{display:block !important;margin-bottom:0 !important}
+.section-head-stacked p{display:block !important;position:static !important;float:none !important;width:auto !important;max-width:700px !important;margin:1rem 0 0 !important;text-align:left !important;justify-self:auto !important;align-self:auto !important}
