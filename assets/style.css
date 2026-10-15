@@ -35,3 +35,20 @@
 .hero .stats .stat span{font-size:22px !important;line-height:1.25 !important;letter-spacing:.02em !important;font-weight:600 !important;text-transform:none !important}
 @media(max-width:900px){.hero .stats .stat span{font-size:20px !important}}
 @media(max-width:520px){.hero .stats .stat span{font-size:18px !important}}
+
+/* v1.4.14 site-wide readability update (footer excluded) */
+main{font-size:18px}
+main .lead{font-size:21px;line-height:1.65}
+main .section-head p{font-size:19px;line-height:1.65}
+main .card p,main .card li{font-size:18px;line-height:1.65}
+main .about-grid p,main .location-grid p,main .contact-copy p{font-size:19px;line-height:1.7}
+main .address,main .address p,main .contact-item,main .contact-item a{font-size:18px;line-height:1.65}
+main .prose p,main .prose li{font-size:18px;line-height:1.7}
+main .blog-empty p{font-size:19px;line-height:1.7}
+main label{font-size:15px;letter-spacing:.04em}
+main input,main select,main textarea,main button{font-size:17px}
+main .btn,main .submit,main .map-link{font-size:14px}
+main .eyebrow{font-size:14px}
+.hero .stats .stat span{font-size:22px !important}
+@media(max-width:900px){main{font-size:17px}main .lead{font-size:20px}main .card p,main .card li,main .prose p,main .prose li{font-size:17px}.hero .stats .stat span{font-size:20px !important}}
+@media(max-width:520px){main{font-size:16px}main .lead{font-size:19px}main .about-grid p,main .location-grid p,main .contact-copy p,main .blog-empty p{font-size:17px}.hero .stats .stat span{font-size:18px !important}}
