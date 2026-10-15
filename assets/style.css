@@ -52,3 +52,14 @@ main .eyebrow{font-size:14px}
 .hero .stats .stat span{font-size:22px !important}
 @media(max-width:900px){main{font-size:17px}main .lead{font-size:20px}main .card p,main .card li,main .prose p,main .prose li{font-size:17px}.hero .stats .stat span{font-size:20px !important}}
 @media(max-width:520px){main{font-size:16px}main .lead{font-size:19px}main .about-grid p,main .location-grid p,main .contact-copy p,main .blog-empty p{font-size:17px}.hero .stats .stat span{font-size:18px !important}}
+
+/* v1.4.15 readability and layout improvements */
+.hero-inner{grid-template-columns:6fr 6fr !important}
+.stats{gap:24px !important}
+.hero .stats .stat{min-width:260px}
+.service-card,.service{padding:40px !important}
+.service-card .number,.service .number{font-size:48px !important}
+.service-card h3,.service h3{font-size:28px !important}
+.service-card p,.service p{font-size:20px !important;line-height:1.6}
+.service-card li,.service li{font-size:19px !important;line-height:1.8}
+.brand-copy p,.footer-brand p:first-of-type,.site-tagline{font-size:16px !important;font-weight:500 !important;letter-spacing:.04em}
