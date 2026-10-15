@@ -3,3 +3,6 @@
 
 /* v1.4.3 footer divider spacing */
 .footer-grid{padding-bottom:16px}.copyright{padding-top:16px}
+
+/* v1.4.4 nav and readability updates */
+.menu a{font-size:13px !important;font-weight:600;letter-spacing:.08em}.footer-contact,.footer-address{font-size:14px !important}
