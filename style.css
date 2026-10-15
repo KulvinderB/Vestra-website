@@ -237,8 +237,3 @@ footer p{margin-top:0;margin-bottom:0}
 /* Contact details remain prominent. */
 .contact-item strong,.contact-copy strong{font-size:20px !important;font-weight:600 !important}
 .contact-item a,.contact-copy a{font-size:19px !important;line-height:1.7 !important}
-
-/* v1.4.35 section-head correction */
-.section-head{display:block !important}
-.section-head>div{display:block !important}
-.section-head p{display:block !important;max-width:700px !important;margin:1rem 0 0 0 !important;text-align:left !important}
